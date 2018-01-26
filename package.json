@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp --watch",
     "prod": "gulp --prod",
-    "merge": "./merge.sh"
+    "deploy": "./deploy.sh"
   },
   "author": "",
   "license": "ISC",
