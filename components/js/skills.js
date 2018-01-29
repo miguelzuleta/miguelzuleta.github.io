@@ -1,7 +1,14 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import loop from './loop.js'
 
-ReactDOM.render(
-  <span>Skills</span>,
-  document.getElementById('skills')
-)
+let skills = dataContext => {
+    let allSkills = `
+        <p>[key]</p>
+        <h2>[value]</h2>
+    `
+    return `
+        <h4>${dataContext.title}</h4>
+        ${loop(dataContext.list, allSkills)}
+    `
+}
+
+export default skills

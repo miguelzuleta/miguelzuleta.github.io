@@ -1,7 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+// import React from 'react'
+// import ReactDOM from 'react-dom'
 
-ReactDOM.render(
-  <span>Exp</span>,
-  document.getElementById('exp')
-)
+// ReactDOM.render(
+//   <span>Exp</span>,
+//   document.getElementById('exp')
+// )

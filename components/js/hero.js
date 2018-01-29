@@ -1,7 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+let hero = dataContext => {
+    return `
+        <h1>${dataContext.headline}</h1>
+        <h6>${dataContext.intro}</h6>
+    `
+}
 
-ReactDOM.render(
-  <span>Hero</span>,
-  document.getElementById('hero')
-)
+export default hero
