@@ -2,68 +2,11 @@ import hero from './hero.js'
 import skills from './skills.js'
 import exp from './exp.js'
 
-let obj = {
-    "hero": {
-        "headline": "Oh Hello!",
-        "intro": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-    },
-    "skills": {
-        "title": "Some of my skills",
-        "list": {
-            "HTML5": 90,
-            "CSS3": 95,
-            "Sass": 92,
-            "Haml": 80,
-            "Javascript (ES5/6)": 84,
-            "ReactJS": 78,
-            "jQuery": 82,
-            "Electron": 70,
-            "NodeJS": 75,
-            "Gulp": 85,
-            "Grunt": 72,
-            "Photoshop": 90,
-            "Illustrator": 80
-        }
-    },
-    "exp": {
-        "1": {
-            "company": "Level Studios",
-            "duration": {
-                "from": "July 2016",
-                "to": "Present"
-            },
-            "title": "Senior Frontend Web Developer",
-            "description": "Working alongside with the company’s major clients (including Apple and Carbon3D) to develop and maintain a few of their websites. Developing a site map generator as an Electron application for Level’s design team that saves countless hours of manual labor and improves designer/client communication. Developed internal web tools that improve development and maintainability of asset building during specific projects."
-        },
-        "2": {
-            "company": "Toovia",
-            "duration": {
-                "from": "Aug 2015",
-                "to": "June 2016"
-            },
-            "title": "Frontend Web Developer",
-            "description": "Established processes and communication practices between design, development teams and clients during every phase of the project to ensure smooth and efficient implementation. Developed web tools to enhance the company's website builder to work more efficiently on mobile devices."
-        },
-        "3": {
-            "company": "Trion Worlds",
-            "duration": {
-                "from": "March 2014",
-                "to": "Aug 2015"
-            },
-            "title": "Senior Web Designer / Web Developer",
-            "description": "Worked as part of both the design and development teams to put together animated banner ads, email campaigns, responsive landing pages, and responsive game websites. Pioneered the design and development of multi-team templates and guideline documents for faster design and easier front end implementation of various game sites."
-        },
-        "4": {
-            "company": "Aeria Games",
-            "duration": {
-                "from": "Dec 2009",
-                "to": " March 2014"
-            },
-            "title": "Senior Web Designer",
-            "description": "Responsible for design and development of ad banners, e-mail campaigns, websites, game launchers, landing pages, teaser sites, video trailers, branding, and logo builds. Lead team's production efficiency and acceleration with the reinforcement and management of custom built templates for several design related tasks."
-        }
-    }
-}
+let data = fetch('./data.json')
+            .then(response => response.json())
+            .then(body => body)
+
+let dataReceived = Promise.resolve(data)
 
 
 let render = (parentElem, childElem, context) => {
@@ -71,5 +14,7 @@ let render = (parentElem, childElem, context) => {
     parent.innerHTML = childElem(context)
 }
 
-render('#hero', hero, obj.hero)
-render('#skills', skills, obj.skills)
+dataReceived.then(obj => {
+    render('#hero', hero, obj.hero)
+    render('#skills', skills, obj.skills)
+})
