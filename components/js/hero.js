@@ -3,7 +3,7 @@ let hero = dataContext => {
 
 	return `
 		<h1>${headline}</h1>
-		<h6>${intro}</h6>
+		<p>${intro}</p>
 	`
 }
 

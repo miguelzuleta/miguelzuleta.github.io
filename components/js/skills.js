@@ -4,13 +4,16 @@ let skills = dataContext => {
 	let { title, list } = dataContext
 
 	let allSkills = `
-		<p>[key]</p>
-		<h2>[value]</h2>
-		<p>- - - - - -</p>
+		<li class="skill">
+			<span class="skill-name">[key]</span>
+			<span class="skill-score">[value]</span>
+		</li>
 	`
 	return `
 		<h4>${title}</h4>
-		${loop(list, allSkills)}
+		<ul>
+			${loop(list, allSkills)}
+		</ul>
 	`
 }
 

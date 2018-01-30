@@ -22,7 +22,7 @@
 		}
 	},
 	"exp": {
-		"job_1": {
+		"job-1": {
 			"company": "Level Studios",
 			"duration": {
 				"from": "July 2016",
@@ -31,7 +31,7 @@
 			"title": "Senior Frontend Web Developer",
 			"description": "Working alongside with the company’s major clients (including Apple and Carbon3D) to develop and maintain a few of their websites. Developing a site map generator as an Electron application for Level’s design team that saves countless hours of manual labor and improves designer/client communication. Developed internal web tools that improve development and maintainability of asset building during specific projects."
 		},
-		"job_2": {
+		"job-2": {
 			"company": "Toovia",
 			"duration": {
 				"from": "Aug 2015",
@@ -40,7 +40,7 @@
 			"title": "Frontend Web Developer",
 			"description": "Established processes and communication practices between design, development teams and clients during every phase of the project to ensure smooth and efficient implementation. Developed web tools to enhance the company's website builder to work more efficiently on mobile devices."
 		},
-		"job_3": {
+		"job-3": {
 			"company": "Trion Worlds",
 			"duration": {
 				"from": "March 2014",
@@ -49,7 +49,7 @@
 			"title": "Senior Web Designer / Web Developer",
 			"description": "Worked as part of both the design and development teams to put together animated banner ads, email campaigns, responsive landing pages, and responsive game websites. Pioneered the design and development of multi-team templates and guideline documents for faster design and easier front end implementation of various game sites."
 		},
-		"job_4": {
+		"job-4": {
 			"company": "Aeria Games",
 			"duration": {
 				"from": "Dec 2009",
