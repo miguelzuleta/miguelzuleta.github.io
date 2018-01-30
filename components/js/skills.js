@@ -1,14 +1,16 @@
 import loop from './loop.js'
 
 let skills = dataContext => {
+	let { title, list } = dataContext
+
 	let allSkills = `
 		<p>[key]</p>
 		<h2>[value]</h2>
-		<h1>[value]</h1>
+		<p>- - - - - -</p>
 	`
 	return `
-		<h4>${dataContext.title}</h4>
-		${loop(dataContext.list, allSkills)}
+		<h4>${title}</h4>
+		${loop(list, allSkills)}
 	`
 }
 

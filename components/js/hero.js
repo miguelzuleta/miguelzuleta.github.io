@@ -1,7 +1,9 @@
 let hero = dataContext => {
+	let { headline, intro } = dataContext
+
 	return `
-		<h1>${dataContext.headline}</h1>
-		<h6>${dataContext.intro}</h6>
+		<h1>${headline}</h1>
+		<h6>${intro}</h6>
 	`
 }
 

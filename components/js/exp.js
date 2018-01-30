@@ -2,7 +2,7 @@ import loop from './loop.js'
 
 let exp = dataContext => {
 	let allExp = `
-		<p>----</p>
+		<p>- - - - -</p>
 		<p>[key]</p>
 		<h2>[[value.company]]</h2>
 		<h1>[[value.duration.from]]</h1>
