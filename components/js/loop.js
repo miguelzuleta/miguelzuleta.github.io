@@ -5,8 +5,9 @@ let loop = (context, element) => {
 	let objKeys = []
 
 	for (let key in context) {
-		matchDeepObj = element.match(/\[\[(.+)\]\]/g)
+		matchDeepObj = element.match(/\[\[(.+?)\]\]/g)
 		objKeys = [context[key], key]
+		console.log(matchDeepObj)
 
 		if (matchDeepObj) {
 			let deepContext = element

@@ -3,11 +3,10 @@ import loop from './loop.js'
 let exp = dataContext => {
 	let allExp = `
 		<div class="job [key]">
-			<h2>[[value.company]]</h2>
-			<h1>[[value.duration.from]]</h1>
-			<h3>[[value.duration.to]]</h3>
-			<h4>[[value.title]]</h4>
-			<h6>[[value.description]]</h6>
+			<span>[[value.duration.from]] - [[value.duration.to]]</span>
+			<h4>[[value.company]]</h4>
+			<h5>[[value.title]]</h5>
+			<p>[[value.description]]</p>
 		</div>
 	`
 	return `
