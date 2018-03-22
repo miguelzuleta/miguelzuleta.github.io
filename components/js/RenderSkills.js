@@ -1,6 +1,6 @@
-import render2 from './render2'
+import render from './render'
 
-let skills = (parent, dataObj) => {
+let RenderSkills = (parent, dataObj) => {
 	let { title, list } = dataObj
 
 	let allSkills = () => {
@@ -23,10 +23,10 @@ let skills = (parent, dataObj) => {
 		<ul>${allSkills()}</ul>
 	`
 
-	render2({
+	render({
 		parent: parent,
 		markup: skillsMarkup
 	})
 }
 
-export default skills
+export default RenderSkills

@@ -1,6 +1,6 @@
-import render2 from './render2'
+import render from './render'
 
-let hero = (parent, dataObj) => {
+let RenderHero = (parent, dataObj) => {
 	let { headline, intro } = dataObj
 
 	let heroMarkup = `
@@ -8,10 +8,10 @@ let hero = (parent, dataObj) => {
 		<p>${intro}</p>
 	`
 
-	return render2({
+	return render({
 		parent: parent,
 		markup: heroMarkup
 	})
 }
 
-export default hero
+export default RenderHero

@@ -1,6 +1,6 @@
-import render2 from './render2'
+import render from './render'
 
-let exp = (parent, dataObj) => {
+let RenderExp = (parent, dataObj) => {
 	let allExp = () => {
 		let expList = ''
 
@@ -20,10 +20,10 @@ let exp = (parent, dataObj) => {
 		return expList
 	}
 
-	return render2({
+	return render({
 		parent: parent,
 		markup: allExp()
 	})
 }
 
-export default exp
+export default RenderExp
