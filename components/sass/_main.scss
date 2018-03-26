@@ -6,7 +6,7 @@
 }
 
 .bg {
-	@include center()
+	@include center();
 	position: fixed;
 	background: linear-gradient(to bottom, #00ff4e, #ff0000);
 	mix-blend-mode: color-dodge;
@@ -35,6 +35,8 @@ h1 {
 	position: absolute;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 900;
+	display: flex;
+	align-items: center;
 
 	&, &:before, &:after {
 		width: 100%;
@@ -42,7 +44,6 @@ h1 {
 	}
 
 	&:before, &:after {
-		mix-blend-mode: color-burn;
 		content: attr(data-msg);
 		position: absolute;
 		left: 0;
@@ -51,14 +52,12 @@ h1 {
 	}
 
 	&:before {
-		top: 3px;
+		mix-blend-mode: color-burn;
 		color: #555;
 		text-shadow: 0 0 5px #000, 0 0 5px #000, 0 0 5px #555, 0 0 5px #000;
 	}
 
 	&:after {
-		top: 6px;
-		color: #00f3ff;
-		opacity: 0;
+		color: #fff;
 	}
 }
