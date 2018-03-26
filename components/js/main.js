@@ -8,10 +8,24 @@ let data = fetch('./data.json')
 
 let dataReceived = Promise.resolve(data)
 
+let heroDimensions = () => {
+	let windowH = window.innerHeight
+	let windowW = window.innerWidth
+	let largerAxis = Math.max(windowH, windowW)
+	let elemHypotenuse = Math.hypot(windowH, windowW)
+	let elemDimensions = largerAxis + (elemHypotenuse - largerAxis)
+	let bg = document.querySelector('#hero .bg')
+
+	bg.style.cssText = `width: ${elemDimensions}px; height: ${elemDimensions}px;`
+}
+
 dataReceived.then(dataObj => {
 	let { hero, skills, exp } = dataObj
 
 	RenderHero('#hero', hero)
 	RenderSkills('#skills', skills)
 	RenderExp('#exp', exp)
+
+	heroDimensions()
+	window.addEventListener('resize', heroDimensions)
 })
