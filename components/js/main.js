@@ -14,7 +14,7 @@ let heroDimensions = () => {
 	let largerAxis = Math.max(windowH, windowW)
 	let elemHypotenuse = Math.hypot(windowH, windowW)
 	let elemDimensions = largerAxis + (elemHypotenuse - largerAxis)
-	let bg = document.querySelector('#hero .bg')
+	let bg = document.querySelector('.bg-wrap .bg')
 
 	bg.style.cssText = `width: ${elemDimensions}px; height: ${elemDimensions}px;`
 }
