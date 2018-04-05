@@ -7,7 +7,7 @@
 }
 
 .section {
-	$pad: 6px;
+	$pad: 2px;
 	position: relative;
 	width: calc(100% - (#{$pad} * 2));
 	padding: 40px;
@@ -34,17 +34,29 @@
 	}
 }
 
-.text-wrap {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-}
+.msg {
 
-h1 {
-	font-size: 200px;
-	color: #313131;
-	position: absolute;
-	font-family: 'Work Sans', sans-serif;
-	font-weight: 100;
+	&-wrap {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	* {
+		position: relative;
+		text-align: center;
+		color: #313131;
+		font-family: 'Work Sans', sans-serif;
+	}
+
+	h1 {
+		font-size: 160px;
+		font-weight: 800;
+	}
+
+	p {
+		font-size: 16px;
+		font-weight: 400;
+	}
 }
