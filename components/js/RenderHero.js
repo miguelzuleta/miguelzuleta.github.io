@@ -4,8 +4,8 @@ let RenderHero = (parent, dataObj) => {
 	let { headline, intro } = dataObj
 
 	let heroMarkup = `
-		<div class="msg-wrap">
-			<div class="msg">
+		<div class="hero-msg-wrap">
+			<div class="hero-msg">
 				<h1>${headline}</h1>
 				<p>${intro}</p>
 			</div>

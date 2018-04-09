@@ -8,9 +8,12 @@ let RenderSkills = (parent, dataObj) => {
 
 		for(let key in list) {
 			skillList += `
-				<li class="skill">
-					<span class="skill-name">${key}</span>
-					<span class="skill-score">${list[key]}</span>
+				<li class="skills-list">
+					<span class="skills-list-name"
+						  data-score="${list[key]}"
+						  style="width: ${list[key]}%;">
+						  ${key}
+					</span>
 				</li>
 			`
 		}

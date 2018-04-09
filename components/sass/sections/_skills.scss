@@ -1,0 +1,15 @@
+.skills {
+	&-list-name {
+		display: inherit;
+		margin: 0 0 10px;
+		padding: 10px;
+		position: relative;
+
+		&:after {
+			content: ' ' attr(data-score);
+			position: absolute;
+			right: 10px;
+		}
+	}
+
+}

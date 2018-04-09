@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900');
+
 @import 'reset';
 @import 'vars';
 @import 'functions';
 @import 'mixins';
-@import 'main';
+
+@import 'shared';
+@import 'sections/hero';
+@import 'sections/skills';
+@import 'sections/exp';
