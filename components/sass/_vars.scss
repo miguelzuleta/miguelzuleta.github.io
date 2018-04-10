@@ -1,2 +1,9 @@
-$color1: #eee;
-$color2: #111;
+$viewports: (
+	large: '100%',
+	medium: '1280px',
+	small: '640'
+);
+
+$max-large: map-get($viewports, 'large');
+$max-medium: map-get($viewports, 'medium');
+$max-small: map-get($viewports, 'small');
