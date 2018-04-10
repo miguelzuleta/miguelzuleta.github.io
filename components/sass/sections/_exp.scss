@@ -1,3 +1,18 @@
 .exp {
+	.job-list {
+		display: flex;
+	}
 
+	.job {
+		width: 25%;
+		&:not(:last-child) {
+			padding-right: 30px;
+
+			small {
+				span {
+					display: none;
+				}
+			}
+		}
+	}
 }

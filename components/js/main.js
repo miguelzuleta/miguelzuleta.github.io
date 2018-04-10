@@ -22,9 +22,9 @@ let heroDimensions = () => {
 dataReceived.then(dataObj => {
 	let { hero, skills, exp } = dataObj
 
-	RenderHero('section.hero', hero)
-	RenderSkills('section.skills', skills)
-	RenderExp('section.exp', exp)
+	RenderHero('.hero', hero)
+	RenderSkills('.skills', skills)
+	RenderExp('.exp', exp)
 
 	heroDimensions()
 	window.addEventListener('resize', heroDimensions)
