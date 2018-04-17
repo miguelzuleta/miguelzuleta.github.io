@@ -1,3 +1,8 @@
+body * {
+	font-family: 'Work Sans', sans-serif;
+	color: #313131;
+}
+
 .bg {
 	@include center();
 	position: fixed;
@@ -26,12 +31,28 @@
 }
 
 .info {
-	$pad: 2px;
+
 	position: relative;
-	width: calc(100% - (#{$pad} * 2));
-	padding: 40px;
+	width: 100%;
+	padding: 100px 40px;
 	box-sizing: border-box;
-	background-color: #313131;
-	margin: $pad;
-	color: #fff;
+	background-color: #fff;
+
+	&:last-of-type {
+		margin-top: 3px;
+	}
+
+	&-wrap {
+		width: 100%;
+		max-width: #{$max-medium};
+		margin: 0 auto;
+	}
+
+	&-title {
+		font-size: 25px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 12px;
+		margin-bottom: 50px;
+	}
 }

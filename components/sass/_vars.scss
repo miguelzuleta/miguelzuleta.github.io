@@ -1,7 +1,7 @@
 $viewports: (
 	large: '100%',
 	medium: '1280px',
-	small: '640'
+	small: '640px'
 );
 
 $max-large: map-get($viewports, 'large');

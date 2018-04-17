@@ -22,8 +22,10 @@ let RenderSkills = (parent, dataObj) => {
 	}
 
 	let skillsMarkup = `
-		<h4 class="info-title">${title}</h4>
-		<ul>${allSkills()}</ul>
+		<div class="info-wrap">
+			<h4 class="info-title">${title}</h4>
+			<ul>${allSkills()}</ul>
+		</div>
 	`
 
 	render({

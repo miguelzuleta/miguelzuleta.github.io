@@ -10,11 +10,10 @@ let RenderExp = (parent, dataObj) => {
 			if (key !== 'title') {
 				expList += `
 					<div class="job ${key}">
-						<small>${duration.from} <span>- ${duration.to}</span></small>
-
-						<h4>${company}</h4>
-						<h5>${title}</h5>
-						<p>${description}</p>
+						<small class="duration">${duration.from} <span>- ${duration.to}</span></small>
+						<h4 class="company">${company}</h4>
+						<h5 class="title">${title}</h5>
+						<p class="description">${description}</p>
 					</div>
 				`
 			}
@@ -24,8 +23,10 @@ let RenderExp = (parent, dataObj) => {
 	}
 
 	let expMarkup = `
-		<h4 class="info-title">${dataObj.title}</h4>
-		<ul class="job-list">${allExp()}</ul>
+		<div class="info-wrap">
+			<h4 class="info-title">${dataObj.title}</h4>
+			<ul class="job-list">${allExp()}</ul>
+		</div>
 	`
 
 	return render({

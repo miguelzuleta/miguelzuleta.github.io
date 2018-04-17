@@ -4,13 +4,13 @@
 		"intro": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
 	},
 	"skills": {
-		"title": "Some of my skills",
+		"title": "Skills",
 		"list": {
 			"HTML5": 90,
 			"CSS3": 95,
 			"Sass": 92,
 			"Haml": 80,
-			"Javascript (ES5/6)": 84,
+			"JS (ES5/6)": 84,
 			"ReactJS": 78,
 			"jQuery": 82,
 			"Electron": 70,
@@ -38,7 +38,7 @@
 				"from": "March 2014",
 				"to": "Aug 2015"
 			},
-			"title": "Senior Web Designer / Web Developer",
+			"title": "Senior Web Designer/Developer",
 			"description": "Worked as part of both the design and development teams to put together animated banner ads, email campaigns, responsive landing pages, and responsive game websites. Pioneered the design and development of multi-team templates and guideline documents for faster design and easier front end implementation of various game sites."
 		},
 		"job-3": {
