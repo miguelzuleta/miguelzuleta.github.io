@@ -13,10 +13,10 @@ body * {
 	@at-root {
 		@keyframes test {
 			from {
-				transform: translate(-50%, -50%) rotate(0deg);
+				transform: translate3d(-50%, -50%, 0) rotate(0deg);
 			}
 			to {
-				transform: translate(-50%, -50%) rotate(359deg);
+				transform: translate3d(-50%, -50%, 0) rotate(359deg);
 			}
 		}
 	}
@@ -44,7 +44,7 @@ body * {
 
 	&-wrap {
 		width: 100%;
-		max-width: #{$max-medium};
+		max-width: #{$max-large};
 		margin: 0 auto;
 	}
 

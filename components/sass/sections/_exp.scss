@@ -1,11 +1,15 @@
 .exp {
 	.job-list {
 		display: flex;
-		padding-top: 22px;
+		flex-wrap: wrap;
+		padding-top: 20px;
 
 		.job {
 			width: 25%;
 			position: relative;
+			box-sizing: border-box;
+			border: 1px dotted transparent;
+			border-top-color: black;
 
 			&:not(:last-child) {
 				padding-right: 45px;
@@ -19,33 +23,22 @@
 				}
 			}
 
-			&:before, &:after {
+			&:before {
 				content: '';
 				position: absolute;
 				background-color: black;
 				left: 0;
-			}
-
-			&:before {
 				width: 10px;
 				height: 10px;
-				top: -4px;
+				top: -6px;
 				border-radius: 1em;
-			}
-
-			&:after {
-				width: 100%;
-				height: 1px;
-				top: 0;
-				border-bottom: dotted 1px black;
-				background-color: transparent;
 			}
 
 			.duration {
 				font-size: 12px;
 				text-transform: uppercase;
 				position: relative;
-				top: -18px;
+				top: -20px;
 				left: 13px;
 			}
 
@@ -69,15 +62,32 @@
 		}
 
 		@include vport('medium') {
-			flex-direction: column-reverse;
-			flex-wrap: wrap;
+			flex-wrap: wrap-reverse;
 
 			.job {
 				width: 100%;
-				padding-right: 0;
 
-				&:not(:first-child) {
-					padding-bottom: 30px;
+				&, &:not(:last-child) {
+					padding: 0 0 55px 25px;
+					border-top-color: transparent;
+					border-left-color: black;
+
+					&:before {
+						left: -6px;
+					}
+
+					.duration {
+						top: -10px;
+						left: 0;
+
+						span {
+							display: inline-block;
+						}
+					}
+				}
+
+				&:first-child {
+					padding-bottom: 0;
 				}
 			}
 		}
