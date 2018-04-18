@@ -4,22 +4,6 @@ body * {
 }
 
 .bg {
-	@include center();
-	position: fixed;
-	background: linear-gradient(to bottom, #00ff4e, #ff0000);
-	mix-blend-mode: color-dodge;
-	animation: test 10s linear 0s infinite;
-
-	@at-root {
-		@keyframes test {
-			from {
-				transform: translate3d(-50%, -50%, 0) rotate(0deg);
-			}
-			to {
-				transform: translate3d(-50%, -50%, 0) rotate(359deg);
-			}
-		}
-	}
 
 	&-wrap {
 		width: 100%;
@@ -28,6 +12,25 @@ body * {
 		overflow: hidden;
 		position: fixed;
 	}
+
+	&-square {
+		position: relative;
+		background: linear-gradient(to bottom, #00ff4e, #ff0000);
+		mix-blend-mode: color-dodge;
+		animation: test 10s linear 0s infinite;
+
+		@at-root {
+			@keyframes test {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(359deg);
+				}
+			}
+		}
+	}
+
 }
 
 .info {
