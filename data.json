@@ -59,9 +59,9 @@
 	"contact": {
 		"title": "Contact",
 		"info": {
-			"419-503-2439": "419-503-2439",
-			"LinkedIn": "Lin link",
-			"Facebook": "fb link"
+			"419-503-2439": "sms:419-503-2439",
+			"LinkedIn": "https://www.linkedin.com/in/miguel-zuleta-68b1134a/",
+			"Messenger": "https://www.messenger.com/t/miguel.zuleta.86"
 		}
 	}
 }
