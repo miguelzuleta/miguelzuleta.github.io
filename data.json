@@ -22,8 +22,8 @@
 		"job-1": {
 			"company": "Aeria Games",
 			"duration": {
-				"from": "Dec 2009",
-				"to": " March 2014"
+				"from": "12/09",
+				"to": " 03/14"
 			},
 			"title": "Senior Web Designer",
 			"description": "Responsible for design and development of ad banners, e-mail campaigns, websites, game launchers, landing pages, teaser sites, video trailers, branding, and logo builds. Lead team's production efficiency and acceleration with the reinforcement and management of custom built templates for several design related tasks."
@@ -31,8 +31,8 @@
 		"job-2": {
 			"company": "Trion Worlds",
 			"duration": {
-				"from": "March 2014",
-				"to": "Aug 2015"
+				"from": "03/14",
+				"to": "08/15"
 			},
 			"title": "Senior Web Designer/Developer",
 			"description": "Worked as part of both the design and development teams to put together animated banner ads, email campaigns, responsive landing pages, and responsive game websites. Pioneered the design and development of multi-team templates and guideline documents for faster design and easier front end implementation of various game sites."
@@ -40,8 +40,8 @@
 		"job-3": {
 			"company": "Toovia",
 			"duration": {
-				"from": "Aug 2015",
-				"to": "June 2016"
+				"from": "08/15",
+				"to": "06/16"
 			},
 			"title": "Front-end Developer",
 			"description": "Established processes and communication practices between design, development teams and clients during every phase of the project to ensure smooth and efficient implementation. Developed web tools to enhance the company's website builder to work more efficiently on mobile devices."
@@ -49,8 +49,8 @@
 		"job-4": {
 			"company": "Level Studios",
 			"duration": {
-				"from": "July 2016",
-				"to": "Present"
+				"from": "07/16",
+				"to": "Today"
 			},
 			"title": "Senior Front-end Developer",
 			"description": "Working alongside with the company’s major clients (including Apple and Carbon3D) to develop and maintain a few of their websites. Developing a site map generator as an Electron application for Level’s design team that saves countless hours of manual labor and improves designer/client communication. Developed internal web tools that improve development and maintainability of asset building during specific projects."

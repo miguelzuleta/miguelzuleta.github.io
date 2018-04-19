@@ -13,14 +13,6 @@
 
 			&:not(:last-child) {
 				padding-right: 45px;
-
-				.duration span{
-					display: none;
-
-					@include vport('small') {
-						display: block;
-					}
-				}
 			}
 
 			&:before {
@@ -79,10 +71,6 @@
 					.duration {
 						top: -10px;
 						left: 0;
-
-						span {
-							display: inline-block;
-						}
 					}
 				}
 
