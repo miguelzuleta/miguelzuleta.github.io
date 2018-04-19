@@ -7,7 +7,7 @@ let RenderContact = (parent, dataObj) => {
 		let infoList = ''
 
 		for(let key in info) {
-			console.log(key)
+
 			infoList += `
 				<li>
 					<a href="${info[key]}" class="bar-list contact-list-item" target="_blank">

@@ -18,6 +18,9 @@ dataReceived.then(dataObj => {
 	RenderExp('.exp', exp)
 	RenderContact('.contact', contact)
 
+	document.querySelector('body')
+			.setAttribute('data-load', 'done')
+
 	rotatingHero()
 	window.addEventListener('resize', rotatingHero)
 })

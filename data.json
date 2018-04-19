@@ -43,7 +43,7 @@
 				"from": "Aug 2015",
 				"to": "June 2016"
 			},
-			"title": "Frontend Web Developer",
+			"title": "Front-end Developer",
 			"description": "Established processes and communication practices between design, development teams and clients during every phase of the project to ensure smooth and efficient implementation. Developed web tools to enhance the company's website builder to work more efficiently on mobile devices."
 		},
 		"job-4": {
@@ -52,7 +52,7 @@
 				"from": "July 2016",
 				"to": "Present"
 			},
-			"title": "Senior Frontend Web Developer",
+			"title": "Senior Front-end Developer",
 			"description": "Working alongside with the company’s major clients (including Apple and Carbon3D) to develop and maintain a few of their websites. Developing a site map generator as an Electron application for Level’s design team that saves countless hours of manual labor and improves designer/client communication. Developed internal web tools that improve development and maintainability of asset building during specific projects."
 		}
 	},

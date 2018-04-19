@@ -5,6 +5,18 @@ body {
 		font-family: 'Work Sans', sans-serif;
 		color: $darker;
 	}
+
+	&[data-load="pending"] {
+		* {
+			opacity: 0;
+		}
+	}
+
+	&[data-load="done"] {
+		* {
+			opacity: 1;
+		}
+	}
 }
 
 .bg {
@@ -21,7 +33,7 @@ body {
 		position: relative;
 		background: linear-gradient(to bottom, #00ff4e, #ff0000);
 		mix-blend-mode: color-dodge;
-		animation: test 10s linear 0s infinite;
+		// animation: test 10s linear 0s infinite;
 
 		@at-root {
 			@keyframes test {
@@ -38,10 +50,9 @@ body {
 }
 
 .info {
-
+	@include outer-padding(80px, 40px);
 	position: relative;
 	width: 100%;
-	padding: 100px 40px;
 	box-sizing: border-box;
 	background-color: $lightest;
 
@@ -57,23 +68,31 @@ body {
 
 	&-title {
 		font-size: 25px;
-		font-weight: 600;
+		font-weight: 500;
 		text-transform: uppercase;
-		letter-spacing: 12px;
+		letter-spacing: 10px;
 		margin-bottom: 50px;
+	}
+
+	@include vport('small') {
+		padding: 60px 25px;
 	}
 }
 
 .bar {
 
 	&-list {
-		display: inherit;
+		display: block;
 		padding: 14px;
 		position: relative;
 		margin-bottom: $barListSpacing;
 		background-color: #eee;
 		font-size: 15px;
 		font-weight: 300;
+
+		@include vport('small') {
+			font-size: 17px;
+		}
 	}
 
 }

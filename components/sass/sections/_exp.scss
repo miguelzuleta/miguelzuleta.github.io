@@ -57,7 +57,7 @@
 			.description {
 				font-size: 15px;
 				margin-top: 20px;
-				line-height: 20px;
+				line-height: 22px;
 			}
 		}
 
@@ -88,6 +88,28 @@
 
 				&:first-child {
 					padding-bottom: 0;
+				}
+			}
+		}
+
+		@include vport('small') {
+			.job {
+				.duration {
+					font-size: 14px;
+					top: -11px;
+				}
+
+				.company {
+					font-size: 17px;
+				}
+
+				.title {
+					font-size: 14px;
+				}
+
+				.description {
+					font-size: 17px;
+					line-height: 26px;
 				}
 			}
 		}

@@ -10,3 +10,14 @@
 		@content;
 	}
 }
+
+@mixin outer-padding($top, $right) {
+	padding: $top $right;
+	@media only screen
+		and (device-width: 375px)
+		and (device-height: 812px)
+		and (-webkit-device-pixel-ratio: 3)
+		and (orientation: landscape) {
+			padding: $top calc(env(safe-area-inset-right) + 10px);
+		}
+}

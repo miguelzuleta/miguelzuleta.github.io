@@ -1,12 +1,16 @@
 .skills {
-	&-list-item:after {
-		content: attr(data-score);
-		position: absolute;
-		right: 9px;
-		font-weight: 200;
-		bottom: 50%;
-		font-size: 35px;
-		color: $lightest;
-		transform: translateY(50%);
+	&-list-item {
+		box-sizing: border-box;
+
+		&:after {
+			content: attr(data-score);
+			position: absolute;
+			right: 9px;
+			font-weight: 200;
+			bottom: 50%;
+			font-size: 35px;
+			color: $lightest;
+			transform: translateY(50%);
+		}
 	}
 }
