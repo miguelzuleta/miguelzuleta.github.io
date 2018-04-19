@@ -6,19 +6,15 @@
 	"skills": {
 		"title": "Skills",
 		"list": {
-			"HTML5": 90,
-			"CSS3": 95,
-			"Sass": 92,
-			"Haml": 80,
-			"JS (ES5/6)": 84,
+			"HTML5, Haml": 90,
+			"CSS3, Sass, Less": 95,
+			"JS ES5/6, jQuery": 84,
 			"ReactJS": 78,
-			"jQuery": 82,
 			"Electron": 70,
 			"NodeJS": 75,
 			"Gulp": 85,
-			"Grunt": 72,
-			"Photoshop": 90,
-			"Illustrator": 80
+			"Github": 60,
+			"Photoshop": 90
 		}
 	},
 	"exp": {

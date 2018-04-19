@@ -1,7 +1,7 @@
-import RenderHero from './RenderHero.js'
-import RenderSkills from './RenderSkills.js'
-import RenderExp from './RenderExp.js'
-import rotatingSquare from './rotatingSquare.js'
+import RenderHero from './render-sections/RenderHero.js'
+import RenderSkills from './render-sections/RenderSkills.js'
+import RenderExp from './render-sections/RenderExp.js'
+import rotatingHero from './rotatingHero.js'
 
 let data = fetch('./data.json')
 			.then(response => response.json())
@@ -16,6 +16,6 @@ dataReceived.then(dataObj => {
 	RenderSkills('.skills', skills)
 	RenderExp('.exp', exp)
 
-	rotatingSquare()
-	window.addEventListener('resize', rotatingSquare)
+	rotatingHero()
+	window.addEventListener('resize', rotatingHero)
 })

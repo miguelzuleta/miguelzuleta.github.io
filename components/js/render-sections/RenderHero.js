@@ -1,4 +1,4 @@
-import render from './render'
+import render from '../render'
 
 let RenderHero = (parent, dataObj) => {
 	let { headline, intro } = dataObj
