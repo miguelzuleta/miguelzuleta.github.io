@@ -8,8 +8,8 @@ let RenderSkills = (parent, dataObj) => {
 
 		for(let key in list) {
 			skillList += `
-				<li class="skills-list">
-					<span class="skills-list-name"
+				<li>
+					<span class="bar-list skills-list-item"
 						  data-score="${list[key]}"
 						  style="width: ${list[key]}%;">
 						  ${key}
@@ -24,7 +24,7 @@ let RenderSkills = (parent, dataObj) => {
 	let skillsMarkup = `
 		<div class="info-wrap">
 			<h4 class="info-title">${title}</h4>
-			<ul>${allSkills()}</ul>
+			<ul class="skills-list">${allSkills()}</ul>
 		</div>
 	`
 

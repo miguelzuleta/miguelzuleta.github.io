@@ -9,7 +9,7 @@
 			position: relative;
 			box-sizing: border-box;
 			border: 1px dotted transparent;
-			border-top-color: black;
+			border-top-color: $darkest;
 
 			&:not(:last-child) {
 				padding-right: 45px;
@@ -26,7 +26,7 @@
 			&:before {
 				content: '';
 				position: absolute;
-				background-color: black;
+				background-color: $darkest;
 				left: 0;
 				width: 10px;
 				height: 10px;
@@ -51,7 +51,7 @@
 			.title {
 				font-size: 12px;
 				margin-top: 5px;
-				color: gray;
+				color: $midtone;
 			}
 
 			.description {
@@ -70,7 +70,7 @@
 				&, &:not(:last-child) {
 					padding: 0 0 55px 25px;
 					border-top-color: transparent;
-					border-left-color: black;
+					border-left-color: $darkest;
 
 					&:before {
 						left: -6px;

@@ -1,3 +1,4 @@
+// Viewports
 $viewports: (
 	large: '1280px',
 	medium: '980px',
@@ -7,3 +8,19 @@ $viewports: (
 $max-large: map-get($viewports, 'large');
 $max-medium: map-get($viewports, 'medium');
 $max-small: map-get($viewports, 'small');
+
+// Spacing
+$barListSpacing: 8px;
+
+// Colors
+$darkest: #000;
+$darker: #313131;
+$midtone: #808080;
+$lighter: #eee;
+$lightest: #fff;
+
+$contact-colors: (
+	phone: '#007aff',
+	linkedin: '#0077b5',
+	facebook: '#3b5998'
+);

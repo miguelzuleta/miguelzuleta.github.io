@@ -1,6 +1,10 @@
-body * {
-	font-family: 'Work Sans', sans-serif;
-	color: #313131;
+body {
+	background-color: $darker;
+
+	* {
+		font-family: 'Work Sans', sans-serif;
+		color: $darker;
+	}
 }
 
 .bg {
@@ -39,10 +43,10 @@ body * {
 	width: 100%;
 	padding: 100px 40px;
 	box-sizing: border-box;
-	background-color: #fff;
+	background-color: $lightest;
 
-	&:last-of-type {
-		margin-top: 3px;
+	&:not(:first-child) {
+		margin-top: 5px;
 	}
 
 	&-wrap {
@@ -59,3 +63,18 @@ body * {
 		margin-bottom: 50px;
 	}
 }
+
+.bar {
+
+	&-list {
+		display: inherit;
+		padding: 14px;
+		position: relative;
+		margin-bottom: $barListSpacing;
+		background-color: #eee;
+		font-size: 15px;
+		font-weight: 300;
+	}
+
+}
+

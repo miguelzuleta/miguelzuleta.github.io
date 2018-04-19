@@ -1,37 +1,12 @@
 .skills {
-
-	&-list {
-		$color-list: (red, blue, green, yellow, purple, orange, pink, magenta, cyan, brown, beige, gray, navy);
-
-		// @for $i from 1 through length($color-list) {
-		// 	&:nth-child(#{$i}) .skills-list-name:after {
-		// 		$color: nth($color-list, $i);
-		// 		// background-image: linear-gradient(to right, #{$color}, #{lighten($color, 20)});
-
-		// 		text-shadow: 0 0 2px #{$color};
-		// 	}
-		// }
+	&-list-item:after {
+		content: attr(data-score);
+		position: absolute;
+		right: 9px;
+		font-weight: 200;
+		bottom: 50%;
+		font-size: 35px;
+		color: $lightest;
+		transform: translateY(50%);
 	}
-
-	&-list-name {
-		display: inherit;
-		padding: 14px;
-		position: relative;
-		margin-bottom: 8px;
-		background-color: #eee;
-		font-size: 15px;
-		font-weight: 300;
-
-		&:after {
-			position: absolute;
-			content: attr(data-score);
-			right: 9px;
-			font-weight: 200;
-			bottom: 50%;
-			font-size: 35px;
-			color: white;
-			transform: translateY(50%);
-		}
-	}
-
 }

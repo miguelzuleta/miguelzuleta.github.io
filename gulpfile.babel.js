@@ -135,7 +135,7 @@ gulp.task('watch', () => {
 	console.log('\n\nWatching for changes...\n\n')
 	gulp.watch('components/sass/**/*.scss', ['sass'])
 	gulp.watch('components/html/**/*.html', ['html'])
-	gulp.watch('components/js/*.js', ['js', 'lint'])
+	gulp.watch('components/js/**/*.js', ['js', 'lint'])
 	gulp.watch(`./${dataFile}`, ['data'])
 })
 
