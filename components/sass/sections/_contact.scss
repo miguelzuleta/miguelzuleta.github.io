@@ -25,6 +25,7 @@
 
 				&:not(:last-child) {
 					margin-right: 0;
+					margin-bottom: $barListSpacing;
 				}
 			}
 		}
@@ -32,6 +33,7 @@
 		&-item {
 			text-align: center;
 			position: relative;
+			margin-bottom: 0;
 
 			&:hover {
 				color: $lightest;
