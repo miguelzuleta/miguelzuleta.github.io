@@ -13,7 +13,6 @@ let dataReceived = Promise.resolve(data)
 let body = document.querySelector('body')
 let isIE = !!document.documentMode || (!isIE && !!window.StyleMedia)
 
-	console.log(isIE)
 dataReceived.then(dataObj => {
 	let { hero, skills, exp, contact } = dataObj
 
@@ -23,7 +22,6 @@ dataReceived.then(dataObj => {
 	RenderContact('.contact', contact)
 
 	body.classList.add('data-loaded')
-
 
 	if(isIE) {
 		body.classList.add('ie')
