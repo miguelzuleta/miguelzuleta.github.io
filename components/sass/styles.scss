@@ -5,7 +5,8 @@
 @import 'functions';
 @import 'mixins';
 
-@import 'shared';
+@import 'global';
+@import 'sections/bg';
 @import 'sections/hero';
 @import 'sections/skills';
 @import 'sections/exp';

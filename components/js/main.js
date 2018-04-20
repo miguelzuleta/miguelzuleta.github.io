@@ -10,6 +10,10 @@ let data = fetch('./data.json')
 
 let dataReceived = Promise.resolve(data)
 
+let body = document.querySelector('body')
+let isIE = !!document.documentMode || (!isIE && !!window.StyleMedia)
+
+	console.log(isIE)
 dataReceived.then(dataObj => {
 	let { hero, skills, exp, contact } = dataObj
 
@@ -18,8 +22,13 @@ dataReceived.then(dataObj => {
 	RenderExp('.exp', exp)
 	RenderContact('.contact', contact)
 
-	document.querySelector('body')
-			.setAttribute('data-load', 'done')
+	body.classList.add('data-loaded')
+
+
+	if(isIE) {
+		body.classList.add('ie')
+		return
+	}
 
 	rotatingHero()
 	window.addEventListener('resize', rotatingHero)
