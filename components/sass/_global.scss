@@ -23,6 +23,32 @@ body {
 			}
 		}
 	}
+
+	&.old-browser {
+		.hero, .info {
+			display: none;
+		}
+
+		.msg {
+			margin: 30px;
+			position: relative;
+
+			&, * {
+				opacity: 1;
+				color: $lighter;
+			}
+
+			p {
+				margin-bottom: 15px;
+				font-weight: 300;
+				font-size: 20px;
+			}
+
+			a {
+				color: $ie-color-1;
+			}
+		}
+	}
 }
 
 .info {
