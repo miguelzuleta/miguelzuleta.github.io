@@ -1,5 +1,3 @@
-# chmod +x ./deploy.sh
-
 echo "Enter merge deploy commit message"
 read commitMessage
 
@@ -27,3 +25,5 @@ git checkout dev site
 mv site/* .
 rm -rf site
 commitToBranch
+
+git checkout dev
