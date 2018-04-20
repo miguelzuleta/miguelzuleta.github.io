@@ -1,4 +1,4 @@
-import render from '../render'
+import render from '../helpers/render'
 
 let RenderSkills = (parent, dataObj) => {
 	let { title, list } = dataObj

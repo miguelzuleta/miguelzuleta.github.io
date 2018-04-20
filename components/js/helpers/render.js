@@ -2,8 +2,8 @@ const render = props => {
 	let { parent, markup } = props
 	let parentContainer = document.querySelectorAll(parent)
 
-	parentContainer.forEach(element => {
-		element.innerHTML += markup
+	Object.keys(parentContainer).map(element => {
+		parentContainer[element].innerHTML += markup
 	})
 }
 

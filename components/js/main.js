@@ -2,28 +2,13 @@ import RenderHero from './render-sections/RenderHero.js'
 import RenderSkills from './render-sections/RenderSkills.js'
 import RenderExp from './render-sections/RenderExp.js'
 import RenderContact from './render-sections/RenderContact.js'
+import detectOldBrowser from './helpers/detectOldBrowser.js'
 import rotatingHero from './rotatingHero.js'
-
-import render from './render'
 
 let body = document.querySelector('body')
 let isIE = !!document.documentMode || (!isIE && !!window.StyleMedia)
 
-if (!self.fetch) {
-	body.classList.add('old-browser')
-
-	let oldBrowserMsg = `
-		<div class="msg">
-			<p>Hello! This is Miguel.</p>
-			<p>This page didn't load because your browser is too old. :(</p>
-			<p>Have you tried <a href="https://www.google.com/chrome/">Google Chrome</a>?</p>
-		</div>
-	`
-
-	body.innerHTML = oldBrowserMsg
-
-	throw new Error("Old Browser!")
-}
+detectOldBrowser(body)
 
 let data = fetch('./data.json')
 			.then(response => response.json())

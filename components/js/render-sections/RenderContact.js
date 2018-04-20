@@ -1,4 +1,4 @@
-import render from '../render'
+import render from '../helpers/render'
 
 let RenderContact = (parent, dataObj) => {
 	let { title, info } = dataObj
