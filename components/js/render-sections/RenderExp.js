@@ -10,7 +10,7 @@ let RenderExp = (parent, dataObj) => {
 			if (key !== 'title') {
 				expList += `
 					<div class="job ${key}">
-						<small class="duration">${duration.from} <span>- ${duration.to}</span></small>
+						<small class="duration">${duration.from} - ${duration.to}</small>
 						<h4 class="company">${company}</h4>
 						<h5 class="title">${title}</h5>
 						<p class="description">${description}</p>
