@@ -13,6 +13,7 @@ import eslint       from 'gulp-eslint'
 import rename       from "gulp-rename"
 import sourcemaps   from 'gulp-sourcemaps'
 
+import jsonmin      from 'gulp-jsonmin'
 import jsStylish    from 'jshint-stylish'
 import browserify   from 'browserify'
 import watchify     from 'watchify'
@@ -30,6 +31,7 @@ let showSourcemaps = true
 let minifyHMTL = false
 let runConnect = ['connect']
 let runWatch = []
+let compressJSON = []
 let dataFile = 'data.json'
 
 if (!fs.existsSync(dir)) {
@@ -41,6 +43,7 @@ if (argv.prod) {
 	cssComments = false
 	minifyHMTL = true
 	showSourcemaps = false
+	compressJSON = ['minify']
 }
 
 if (argv.watch) {
@@ -56,6 +59,12 @@ let copyDataToSite = () => {
 		.pipe(fs.createWriteStream(`./site/${dataFile}`))
 }
 copyDataToSite()
+
+gulp.task('minify', function () {
+	gulp.src(`./site/${dataFile}`)
+		.pipe(jsonmin())
+		.pipe(gulp.dest('./site'));
+});
 
 gulp.task('connect', () => {
 	connect.server({
@@ -139,4 +148,4 @@ gulp.task('watch', () => {
 	gulp.watch(`./${dataFile}`, ['data'])
 })
 
-gulp.task('default', ['html', 'sass', 'js', 'data', 'lint', ...runConnect, ...runWatch])
+gulp.task('default', ['html', 'sass', 'js', 'data', 'lint', ...compressJSON, ...runConnect, ...runWatch])
