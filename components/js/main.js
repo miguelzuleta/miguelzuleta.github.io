@@ -1,6 +1,7 @@
 import RenderHero from './render-sections/RenderHero.js'
 import RenderSkills from './render-sections/RenderSkills.js'
 import RenderExp from './render-sections/RenderExp.js'
+import RenderCodepens from './render-sections/RenderCodepens.js'
 import RenderContact from './render-sections/RenderContact.js'
 import detectOldBrowser from './helpers/detectOldBrowser.js'
 import rotatingHero from './rotatingHero.js'
@@ -18,11 +19,12 @@ let dataReceived = Promise.resolve(data)
 
 
 dataReceived.then(dataObj => {
-	let { hero, skills, exp, contact } = dataObj
+	let { hero, skills, exp, codepens, contact } = dataObj
 
 	RenderHero('.hero', hero)
 	RenderSkills('.skills', skills)
 	RenderExp('.exp', exp)
+	RenderCodepens('.codepens', codepens)
 	RenderContact('.contact', contact)
 
 	body.classList.add('data-loaded')

@@ -1,0 +1,31 @@
+.codepens {
+	#pen {
+		&-JRPOpa{
+			height: 752px;
+		}
+
+		&-PezyLJ{
+			height: 780px;
+		}
+
+		&-jrqVXO{
+			height: 450px;
+		}
+	}
+
+	.pen {
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+
+		&-title {
+			display: none;
+			font-size: 20px;
+		}
+	}
+
+	iframe {
+		position: relative;
+		width: 100%;
+	}
+}
