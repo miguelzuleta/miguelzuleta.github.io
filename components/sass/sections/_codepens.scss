@@ -1,5 +1,22 @@
 .codepens {
-	#pen {
+
+	&-list {
+		@include vport('medium') {
+			display: flex;
+		}
+
+		@include vport('small') {
+			flex-direction: column;
+		}
+	}
+
+	.pen {
+		position: relative;
+
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+
 		&-JRPOpa{
 			height: 752px;
 		}
@@ -11,21 +28,46 @@
 		&-jrqVXO{
 			height: 450px;
 		}
-	}
-
-	.pen {
-		&:not(:last-child) {
-			margin-bottom: 40px;
-		}
 
 		&-title {
 			display: none;
-			font-size: 20px;
-		}
-	}
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 1;
 
-	iframe {
-		position: relative;
-		width: 100%;
+			@include vport('medium') {
+				@include tabLinkIcon($lightest);
+
+				display: block;
+			}
+		}
+
+		&-frame {
+			position: relative;
+			width: 100%;
+
+			@include vport('medium') {
+				height: 100%;
+			}
+		}
+
+		@include vport('medium') {
+			height: 180px;
+
+			&:not(:last-child) {
+				margin-right: $barListSpacing;
+				margin-bottom: 0;
+			}
+		}
+
+		@include vport('small') {
+			height: 260px;
+
+			&:not(:last-child) {
+				margin-right: 0;
+				margin-bottom: $barListSpacing;
+			}
+		}
 	}
 }

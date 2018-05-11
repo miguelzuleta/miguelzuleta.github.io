@@ -8,10 +8,10 @@ let RenderSkills = (parent, dataObj) => {
 
 		for(let key in pens) {
 			pensList += `
-				<div class="pen">
-					<p class="pen-title">${pens[key]}</p>
-					<iframe id="pen-${key}" scrolling='no' title='${pens[key]}' src='//codepen.io/miguelzuleta/embed/preview/${key}/?theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'>See the Pen <a href='https://codepen.io/miguelzuleta/pen/${key}/'>${pens[key]}</a> by Miguel Zuleta (<a href='https://codepen.io/miguelzuleta'>@miguelzuleta</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
-				</div>
+				<li class="pen">
+					<a href="https://codepen.io/miguelzuleta/pen/${key}" class="pen-title" target="_blank"></a>
+					<iframe class="pen-frame pen-${key}" scrolling='no' title='${pens[key]}' src='//codepen.io/miguelzuleta/embed/preview/${key}/?theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'>See the Pen <a href='https://codepen.io/miguelzuleta/pen/${key}/'>${pens[key]}</a> by Miguel Zuleta (<a href='https://codepen.io/miguelzuleta'>@miguelzuleta</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+				</li>
 			`
 		}
 
@@ -21,7 +21,7 @@ let RenderSkills = (parent, dataObj) => {
 	let skillsMarkup = `
 		<div class="info-wrap">
 			<h4 class="info-title">${title}</h4>
-			${allPens()}
+			<ul class="codepens-list">${allPens()}</ul>
 		</div>
 	`
 
