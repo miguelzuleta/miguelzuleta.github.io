@@ -1,4 +1,5 @@
 import toDOM from '../helpers/toDOM'
+import pageSection from '../helpers/elemSection'
 
 let RenderContact = dataObj => {
 	let { title, info } = dataObj
@@ -19,26 +20,7 @@ let RenderContact = dataObj => {
 		})
 	}
 
-	let contactData = {
-		parent: 'main',
-		child: [{
-			elem: 'section',
-			attrs: { class: 'skills info'},
-			child: [{
-				elem: 'div',
-				attrs: { class: 'info-wrap' },
-				child: [{
-					elem: 'h4',
-					attrs: { class: 'info-title' },
-					text: title
-				}, {
-					elem: 'ul',
-					attrs: { class: 'contact-list' },
-					child: infoList
-				}]
-			}]
-		}]
-	}
+	let contactData = pageSection('contact', title, infoList)
 
 	toDOM(contactData)
 }

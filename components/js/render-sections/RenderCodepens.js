@@ -1,4 +1,5 @@
 import toDOM from '../helpers/toDOM'
+import pageSection from '../helpers/elemSection'
 
 let RenderSkills = dataObj => {
 	let { title, pens } = dataObj
@@ -25,38 +26,12 @@ let RenderSkills = dataObj => {
 					frameborder:'no',
 					allowtransparency: 'true',
 					allowfullscreen: 'true'
-				},
-				text: 'See the Pen',
-				child: [{
-					elem: 'a',
-					attrs: {
-						href: `https://codepen.io/miguelzuleta/pen/${key}/`
-					}
-				}]
+				}
 			}]
 		})
 	}
 
-	let pensData = {
-		parent: 'main',
-		child: [{
-			elem: 'section',
-			attrs: { class: 'codepens info'},
-			child: [{
-				elem: 'div',
-				attrs: { class: 'info-wrap' },
-				child: [{
-					elem: 'h4',
-					attrs: { class: 'info-title' },
-					text: title
-				}, {
-					elem: 'ul',
-					attrs: { class: 'codepens-list' },
-					child: pensList
-				}]
-			}]
-		}]
-	}
+	let pensData = pageSection('codepens', title, pensList)
 
 	toDOM(pensData)
 }

@@ -1,4 +1,5 @@
 import toDOM from '../helpers/toDOM'
+import pageSection from '../helpers/elemSection'
 
 let RenderExp = dataObj => {
 	let { title } = dataObj
@@ -32,26 +33,7 @@ let RenderExp = dataObj => {
 		}
 	}
 
-	let expData = {
-		parent: 'main',
-		child: [{
-			elem: 'section',
-			attrs: { class: 'exp info' },
-			child: [{
-				elem: 'div',
-				attrs: { class: 'info-wrap' },
-				child: [{
-					elem: 'h4',
-					attrs: { class: 'info-title' },
-					text: title
-				}, {
-					elem: 'ul',
-					attrs: { class: 'job-list' },
-					child: expList
-				}]
-			}]
-		}]
-	}
+	let expData = pageSection('exp', title, expList)
 
 	toDOM(expData)
 }
