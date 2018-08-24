@@ -1,29 +1,28 @@
 const render = props => {
 	let { parent, child } = props
 	let parentContainer = document.querySelectorAll(parent)
-	console.log(parentContainer)
 
 	Object.values(parentContainer).forEach(parentEl => {
-		// parentContainer[element].innerHTML += child
-		// let newElem
 		if (child) {
 			child.forEach((childEl, index) => {
 				let newElem = document.createElement(childEl.tag)
-				console.log(parentEl.hasAttribute('data-render'))
-				newElem.setAttribute('data-render', `r-${index}`)
+				let renderAttr = parentEl.getAttribute('data-el')
+				let dataRender = renderAttr ? `${renderAttr}${index}`: index
+
+				newElem.setAttribute('data-el', dataRender)
 				newElem.innerText = childEl.inner
+
 				parentEl.appendChild(newElem)
-				console.log(childEl['child'])
+
 
 				if (childEl['child']) {
 					render({
-						parent: childEl.tag,
+						parent: `[data-el="${dataRender}"]`,
 						child: childEl['child']
 					})
 				}
 			})
 		}
-		// console.log(parentEl)
 	})
 }
 
@@ -53,7 +52,11 @@ render({
 			inner: 'moar spaaaana nee',
 			child: [{
 				tag: 'i',
-				inner: '3 3 3 3 3'
+				inner: '3 3 3 3 3',
+				child: [{
+					tag: 'em',
+					inner: 'EMEMEMEMEM'
+				}]
 			}]
 		}]
 	},
