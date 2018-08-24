@@ -1,7 +1,7 @@
 {
 	"hero": {
 		"headline": "Miguel Zuleta",
-		"intro": "Front-end Developer"
+		"intro": "UI Developer"
 	},
 	"skills": {
 		"title": "Skills",
@@ -44,7 +44,7 @@
 				"from": "08/15",
 				"to": "06/16"
 			},
-			"title": "Front-end Developer",
+			"title": "UI Developer",
 			"description": "Established processes and communication practices between design, development teams and clients during every phase of the project to ensure smooth and efficient implementation. Developed web tools to enhance the company's website builder to work more efficiently on mobile devices."
 		},
 		"job-4": {
@@ -53,8 +53,8 @@
 				"from": "07/16",
 				"to": "Today"
 			},
-			"title": "Senior Front-end Developer",
-			"description": "Working alongside with the company's major clients (including Apple and Carbon3D) to develop and maintain a few of their websites. Developing a site map generator as an Electron application for Level's design team that saves countless hours of manual labor and improves designer/client communication. Developed internal web tools that improve development and maintainability of asset building during specific projects."
+			"title": "Senior UI Developer",
+			"description": "Working onsite at Apple to develop and maintain a few of their product launch websites. Developing a site map generator as an Electron application for Level's design team that saves countless hours of manual labor and improves designer/client communication. Developing internal web tools that improve development and maintainability of asset building during specific projects."
 		}
 	},
 	"codepens": {
