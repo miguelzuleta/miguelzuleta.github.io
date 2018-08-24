@@ -5,12 +5,9 @@ const toDOM = props => {
 
 	Object.values(parentContainer).forEach(parentEl => {
 		if (child) {
-			child.forEach((childEl, index) => {
-				let renderAttr = parentEl.getAttribute(dataAttr)
-				let dataRender = renderAttr ? `${renderAttr}${index}`: index
-
+			child.forEach(childEl => {
 				let newElem = document.createElement(childEl.elem)
-				newElem.setAttribute(dataAttr, dataRender)
+				newElem.setAttribute(dataAttr, '')
 
 				if (childEl.text) {
 					newElem.innerText = childEl.text
@@ -25,7 +22,7 @@ const toDOM = props => {
 
 				if (childEl['child']) {
 					toDOM({
-						parent: `[${dataAttr}="${dataRender}"]`,
+						parent: `[${dataAttr}]`,
 						child: childEl.child
 					})
 				} else {

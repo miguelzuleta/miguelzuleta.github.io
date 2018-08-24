@@ -11,7 +11,7 @@ let RenderExp = dataObj => {
 		if (key !== 'title') {
 			expList.push({
 				elem: 'li',
-				attrs: { class: `job job-${key}` },
+				attrs: { class: `job ${key}` },
 				child: [{
 					elem: 'small',
 					attrs: { class: 'duration' },
