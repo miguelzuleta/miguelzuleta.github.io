@@ -19,7 +19,7 @@ let RenderSkills = dataObj => {
 			}, {
 				elem: 'iframe',
 				attrs: {
-					src: `//codepen.io/miguelzuleta/embed/preview/${key}/?theme-id=dark&default-tab=result&embed-version=2`,
+					src: `https://codepen.io/miguelzuleta/embed/preview/${key}/?theme-id=dark&default-tab=result&embed-version=2`,
 					class: `pen-frame pen-${key}`,
 					title: pens[key],
 					scrolling: 'no',

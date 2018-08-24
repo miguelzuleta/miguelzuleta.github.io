@@ -1,6 +1,6 @@
 const toDOM = props => {
 	let { parent, child } = props
-	let dataAttr = 'data-el'
+	let dataAttr = 'data-current-elem'
 	let parentContainer = document.querySelectorAll(parent)
 
 	Object.values(parentContainer).forEach(parentEl => {
@@ -20,16 +20,16 @@ const toDOM = props => {
 				parentEl.appendChild(newElem)
 				parentEl.removeAttribute(dataAttr)
 
+
 				if (childEl['child']) {
 					toDOM({
 						parent: `[${dataAttr}]`,
-						child: childEl.child
+						child: childEl['child']
 					})
 				} else {
 					newElem.removeAttribute(dataAttr)
 				}
 			})
-
 		}
 	})
 }
