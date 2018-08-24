@@ -1,21 +1,28 @@
-import render from '../helpers/render'
+import toDOM from '../helpers/toDOM'
 
-let RenderHero = (parent, dataObj) => {
+let RenderHero = dataObj => {
 	let { headline, intro } = dataObj
 
-	let heroMarkup = `
-		<div class="hero-msg-wrap">
-			<div class="hero-msg">
-				<h1>${headline}</h1>
-				<p>${intro}</p>
-			</div>
-		</div>
-	`
+	let heroData = {
+		parent: 'main',
+		child: [{
+			elem: 'header',
+			attrs: { class: 'hero-msg-wrap' },
+			child: [{
+				elem: 'div',
+				attrs: { class: 'hero-msg' },
+				child: [{
+					elem: 'h1',
+					text: headline
+				}, {
+					elem: 'p',
+					text: intro
+				}]
+			}]
+		}]
+	}
 
-	return render({
-		parent: parent,
-		markup: heroMarkup
-	})
+	toDOM(heroData)
 }
 
 export default RenderHero

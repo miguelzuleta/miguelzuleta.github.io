@@ -1,37 +1,47 @@
-import render from '../helpers/render'
+import toDOM from '../helpers/toDOM'
 
-let RenderSkills = (parent, dataObj) => {
+let RenderSkills = dataObj => {
 	let { title, list } = dataObj
 
-	let allSkills = () => {
-		let skillList = ''
+	let skillList = []
 
-		for(let key in list) {
-			skillList += `
-				<li>
-					<span class="bar-list skills-list-item"
-						  data-score="${list[key]}"
-						  style="width: ${list[key]}%;">
-						  ${key}
-					</span>
-				</li>
-			`
-		}
-
-		return skillList
+	for(let key in list) {
+		skillList.push({
+			elem: 'li',
+			child: [{
+				elem: 'span',
+				attrs: {
+					class: 'bar-list skills-list-item',
+					'data-score': list[key],
+					style: `width: ${list[key]}%;`
+				},
+				text: key
+			}]
+		})
 	}
 
-	let skillsMarkup = `
-		<div class="info-wrap">
-			<h4 class="info-title">${title}</h4>
-			<ul class="skills-list">${allSkills()}</ul>
-		</div>
-	`
+	let skillsData = {
+		parent: 'main',
+		child: [{
+			elem: 'section',
+			attrs: { class: 'skills info'},
+			child: [{
+				elem: 'div',
+				attrs: { class: 'info-wrap' },
+				child: [{
+					elem: 'h4',
+					attrs: { class: 'info-title' },
+					text: title
+				}, {
+					elem: 'ul',
+					attrs: { class: 'skills-list' },
+					child: skillList
+				}]
+			}]
+		}]
+	}
 
-	render({
-		parent: parent,
-		markup: skillsMarkup
-	})
+	toDOM(skillsData)
 }
 
 export default RenderSkills

@@ -1,34 +1,64 @@
-import render from '../helpers/render'
+import toDOM from '../helpers/toDOM'
 
-let RenderSkills = (parent, dataObj) => {
+let RenderSkills = dataObj => {
 	let { title, pens } = dataObj
+	let pensList = []
 
-	let allPens = () => {
-		let pensList = ''
-
-		for(let key in pens) {
-			pensList += `
-				<li class="pen">
-					<a href="https://codepen.io/miguelzuleta/pen/${key}" class="pen-title" target="_blank"></a>
-					<iframe class="pen-frame pen-${key}" scrolling='no' title='${pens[key]}' src='//codepen.io/miguelzuleta/embed/preview/${key}/?theme-id=dark&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true'>See the Pen <a href='https://codepen.io/miguelzuleta/pen/${key}/'>${pens[key]}</a> by Miguel Zuleta (<a href='https://codepen.io/miguelzuleta'>@miguelzuleta</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
-				</li>
-			`
-		}
-
-		return pensList
+	for(let key in pens) {
+		pensList.push({
+			elem: 'li',
+			attrs: { class: 'pen' },
+			child: [{
+				elem: 'a',
+				attrs: {
+					class: 'pen-title',
+					target: '_blank',
+					href: `https://codepen.io/miguelzuleta/pen/${key}`
+				}
+			}, {
+				elem: 'iframe',
+				attrs: {
+					src: `//codepen.io/miguelzuleta/embed/preview/${key}/?theme-id=dark&default-tab=result&embed-version=2`,
+					class: `pen-frame pen-${key}`,
+					title: pens[key],
+					scrolling: 'no',
+					frameborder:'no',
+					allowtransparency: 'true',
+					allowfullscreen: 'true'
+				},
+				text: 'See the Pen',
+				child: [{
+					elem: 'a',
+					attrs: {
+						href: `https://codepen.io/miguelzuleta/pen/${key}/`
+					}
+				}]
+			}]
+		})
 	}
 
-	let skillsMarkup = `
-		<div class="info-wrap">
-			<h4 class="info-title">${title}</h4>
-			<ul class="codepens-list">${allPens()}</ul>
-		</div>
-	`
+	let pensData = {
+		parent: 'main',
+		child: [{
+			elem: 'section',
+			attrs: { class: 'codepens info'},
+			child: [{
+				elem: 'div',
+				attrs: { class: 'info-wrap' },
+				child: [{
+					elem: 'h4',
+					attrs: { class: 'info-title' },
+					text: title
+				}, {
+					elem: 'ul',
+					attrs: { class: 'codepens-list' },
+					child: pensList
+				}]
+			}]
+		}]
+	}
 
-	render({
-		parent: parent,
-		markup: skillsMarkup
-	})
+	toDOM(pensData)
 }
 
 export default RenderSkills

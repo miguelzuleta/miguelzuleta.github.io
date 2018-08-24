@@ -1,6 +1,5 @@
-let bg = document.querySelector('.bg-square')
-
 let rotatingSquare = () => {
+	let bg = document.querySelector('.bg-square')
 	let windowH = window.innerHeight
 	let windowW = window.innerWidth
 	let largerAxis = Math.max(windowH, windowW)

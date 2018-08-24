@@ -1,38 +1,59 @@
-import render from '../helpers/render'
+import toDOM from '../helpers/toDOM'
 
-let RenderExp = (parent, dataObj) => {
-	let allExp = () => {
-		let expList = ''
+let RenderExp = dataObj => {
+	let { title } = dataObj
+	let expList = []
 
-		for(let key in dataObj) {
-			let { company, duration, title, description } = dataObj[key]
+	for(let key in dataObj) {
+		let { company, duration, title, description } = dataObj[key]
 
-			if (key !== 'title') {
-				expList += `
-					<div class="job ${key}">
-						<small class="duration">${duration.from} - ${duration.to}</small>
-						<h4 class="company">${company}</h4>
-						<h5 class="title">${title}</h5>
-						<p class="description">${description}</p>
-					</div>
-				`
-			}
+		if (key !== 'title') {
+			expList.push({
+				elem: 'li',
+				attrs: { class: `job job-${key}` },
+				child: [{
+					elem: 'small',
+					attrs: { class: 'duration' },
+					text: `${duration.from} - ${duration.to}`
+				}, {
+					elem: 'h4',
+					attrs: { class: 'company' },
+					text: company
+				}, {
+					elem: 'h5',
+					attrs: { class: 'title' },
+					text: title
+				}, {
+					elem: 'p',
+					attrs: { class: 'description' },
+					text: description
+				}]
+			})
 		}
-
-		return expList
 	}
 
-	let expMarkup = `
-		<div class="info-wrap">
-			<h4 class="info-title">${dataObj.title}</h4>
-			<ul class="job-list">${allExp()}</ul>
-		</div>
-	`
+	let expData = {
+		parent: 'main',
+		child: [{
+			elem: 'section',
+			attrs: { class: 'exp info' },
+			child: [{
+				elem: 'div',
+				attrs: { class: 'info-wrap' },
+				child: [{
+					elem: 'h4',
+					attrs: { class: 'info-title' },
+					text: title
+				}, {
+					elem: 'ul',
+					attrs: { class: 'job-list' },
+					child: expList
+				}]
+			}]
+		}]
+	}
 
-	return render({
-		parent: parent,
-		markup: expMarkup
-	})
+	toDOM(expData)
 }
 
 export default RenderExp
