@@ -70,15 +70,17 @@ body {
 	}
 
 	&-title {
-		font-size: 28px;
-		font-weight: 500;
-		text-transform: uppercase;
-		letter-spacing: 9px;
+		font-size: 40px;
+		font-weight: 300;
 		margin-bottom: 50px;
 	}
 
 	@include vport('small') {
 		padding: 60px 25px;
+
+		&-title {
+			font-size: 44px;
+		}
 	}
 }
 

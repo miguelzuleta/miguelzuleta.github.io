@@ -11,7 +11,7 @@
 		position: relative;
 		background: linear-gradient(to bottom, #00ff4e, #ff0000);
 		mix-blend-mode: color-dodge;
-		// animation: test 10s linear 0s infinite;
+		animation: test 10s linear 0s infinite;
 
 		@at-root {
 			@keyframes test {
