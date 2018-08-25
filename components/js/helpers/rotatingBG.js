@@ -1,4 +1,4 @@
-let rotatingSquare = () => {
+let rotatingBG = () => {
 	let bg = document.querySelector('.bg-square')
 	let windowH = window.innerHeight
 	let windowW = window.innerWidth
@@ -29,4 +29,4 @@ let rotatingSquare = () => {
 	`
 }
 
-export default rotatingSquare
+export default rotatingBG

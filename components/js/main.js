@@ -1,3 +1,5 @@
+import rotatingBG from './helpers/rotatingBG.js'
+
 import RenderBg from './render-sections/RenderBg.js'
 import RenderHero from './render-sections/RenderHero.js'
 import RenderSkills from './render-sections/RenderSkills.js'
@@ -6,7 +8,6 @@ import RenderCodepens from './render-sections/RenderCodepens.js'
 import RenderContact from './render-sections/RenderContact.js'
 import detectOldBrowser from './helpers/detectOldBrowser.js'
 
-import rotatingHero from './rotatingHero.js'
 import { BODY } from './helpers/constants.js'
 
 let isIE = !!document.documentMode || (!isIE && !!window.StyleMedia)
@@ -18,7 +19,6 @@ let data = fetch('./data.json')
 			.then(content => content)
 
 let dataReceived = Promise.resolve(data)
-
 
 dataReceived.then(dataObj => {
 	let { hero, skills, exp, codepens, contact } = dataObj
@@ -37,6 +37,6 @@ dataReceived.then(dataObj => {
 		return
 	}
 
-	rotatingHero()
-	window.addEventListener('resize', rotatingHero)
+	rotatingBG()
+	window.addEventListener('resize', rotatingBG)
 })

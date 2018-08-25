@@ -3,10 +3,10 @@ import sectionWrap from '../site-modules/section-wrap'
 
 let RenderContact = dataObj => {
 	let { title, info } = dataObj
-	let infoList = []
+	let contactList = []
 
 	for(let key in info) {
-		infoList.push({
+		contactList.push({
 			elem: 'li',
 			child: [{
 				elem: 'a',
@@ -20,7 +20,7 @@ let RenderContact = dataObj => {
 		})
 	}
 
-	let contactData = sectionWrap('contact', title, infoList)
+	let contactData = sectionWrap('contact', title, contactList)
 
 	toDOM(contactData)
 }
