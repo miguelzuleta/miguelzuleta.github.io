@@ -1,5 +1,5 @@
 import toDOM from '../helpers/toDOM'
-import pageSection from '../helpers/elemSection'
+import sectionWrap from '../site-modules/section-wrap'
 
 let RenderExp = dataObj => {
 	let { title } = dataObj
@@ -33,7 +33,7 @@ let RenderExp = dataObj => {
 		}
 	}
 
-	let expData = pageSection('exp', title, expList)
+	let expData = sectionWrap('exp', title, expList)
 
 	toDOM(expData)
 }

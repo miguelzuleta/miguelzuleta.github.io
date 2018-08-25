@@ -1,5 +1,5 @@
 import toDOM from '../helpers/toDOM'
-import pageSection from '../helpers/elemSection'
+import sectionWrap from '../site-modules/section-wrap'
 
 let RenderContact = dataObj => {
 	let { title, info } = dataObj
@@ -20,7 +20,7 @@ let RenderContact = dataObj => {
 		})
 	}
 
-	let contactData = pageSection('contact', title, infoList)
+	let contactData = sectionWrap('contact', title, infoList)
 
 	toDOM(contactData)
 }

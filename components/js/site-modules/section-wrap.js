@@ -1,6 +1,6 @@
-import { MAIN_WRAP } from './constants.js'
+import { MAIN_WRAP } from '../helpers/constants.js'
 
-const pageSection = (sectionClass, sectionTitle, sectionList) => {
+const sectionWrap = (sectionClass, sectionTitle, sectionList) => {
 	return {
 		parent: MAIN_WRAP,
 		child: [{
@@ -23,4 +23,4 @@ const pageSection = (sectionClass, sectionTitle, sectionList) => {
 	}
 }
 
-export default pageSection
+export default sectionWrap

@@ -1,5 +1,5 @@
 import toDOM from '../helpers/toDOM'
-import pageSection from '../helpers/elemSection'
+import sectionWrap from '../site-modules/section-wrap'
 
 let RenderSkills = dataObj => {
 	let { title, list } = dataObj
@@ -21,7 +21,7 @@ let RenderSkills = dataObj => {
 		})
 	}
 
-	let skillsData = pageSection('skills', title, skillList)
+	let skillsData = sectionWrap('skills', title, skillList)
 
 	toDOM(skillsData)
 }
