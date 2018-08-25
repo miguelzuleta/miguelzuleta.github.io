@@ -5,16 +5,17 @@ import RenderExp from './render-sections/RenderExp.js'
 import RenderCodepens from './render-sections/RenderCodepens.js'
 import RenderContact from './render-sections/RenderContact.js'
 import detectOldBrowser from './helpers/detectOldBrowser.js'
-import rotatingHero from './rotatingHero.js'
 
-let body = document.querySelector('body')
+import rotatingHero from './rotatingHero.js'
+import { BODY } from './helpers/constants.js'
+
 let isIE = !!document.documentMode || (!isIE && !!window.StyleMedia)
 
-detectOldBrowser(body)
+detectOldBrowser(BODY)
 
 let data = fetch('./data.json')
 			.then(response => response.json())
-			.then(body => body)
+			.then(content => content)
 
 let dataReceived = Promise.resolve(data)
 
@@ -29,10 +30,10 @@ dataReceived.then(dataObj => {
 	RenderCodepens(codepens)
 	RenderContact(contact)
 
-	body.classList.add('data-loaded')
+	BODY.classList.add('data-loaded')
 
 	if(isIE) {
-		body.classList.add('ie')
+		BODY.classList.add('ie')
 		return
 	}
 

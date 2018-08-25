@@ -1,6 +1,8 @@
+import { MAIN_WRAP } from './constants.js'
+
 const pageSection = (sectionClass, sectionTitle, sectionList) => {
 	return {
-		parent: 'main',
+		parent: MAIN_WRAP,
 		child: [{
 			elem: 'section',
 			attrs: { class: `${sectionClass} info`},

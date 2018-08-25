@@ -1,10 +1,11 @@
+import { MAIN_WRAP } from '../helpers/constants.js'
 import toDOM from '../helpers/toDOM'
 
 let RenderHero = dataObj => {
 	let { headline, intro } = dataObj
 
 	let heroData = {
-		parent: 'main',
+		parent: MAIN_WRAP,
 		child: [{
 			elem: 'header',
 			attrs: { class: 'hero-msg-wrap' },
