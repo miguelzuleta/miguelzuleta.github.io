@@ -1,4 +1,4 @@
-import { BODY, BG } from './helpers/constants.js'
+import { BODY } from './helpers/constants.js'
 
 import RenderBg from './render-sections/RenderBg.js'
 import RenderHero from './render-sections/RenderHero.js'
@@ -13,7 +13,7 @@ import rotatingBG from './helpers/rotatingBG.js'
 let MZsite = () => {
 	let init = () => {
 		if (!self.fetch) {
-			RenderOldBrowserMsg(BODY)
+			RenderOldBrowserMsg()
 		} else {
 			_renderSections()
 		}
@@ -38,13 +38,12 @@ let MZsite = () => {
 			RenderCodepens(codepens)
 			RenderContact(contact)
 
-			let bgSquare = document.querySelector('.bg-square')
-
 			if (_isIE()) {
 				BODY.classList.add('ie')
 				return
 			}
 
+			let bgSquare = document.querySelector('.bg-square')
 			_handleBgRotation(bgSquare)
 
 			BODY.classList.add('data-loaded')

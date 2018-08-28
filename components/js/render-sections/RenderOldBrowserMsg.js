@@ -1,15 +1,34 @@
-let RenderOldBrowserMsg = element => {
-	element.classList.add('old-browser')
+import toDOM from '../helpers/toDOM'
+import { BODY, MAIN_WRAP } from '../helpers/constants'
 
-	let oldBrowserMsg = `
-		<div class="msg">
-			<p>Hello! This is Miguel.</p>
-			<p>This page didn't load because your browser is too old. :(</p>
-			<p>Have you tried <a href="https://www.google.com/chrome/">Google Chrome</a>?</p>
-		</div>
-	`
+let RenderOldBrowserMsg = () => {
+	BODY.classList.add('old-browser')
 
-	element.innerHTML = oldBrowserMsg
+	let oldBrowserMsg = {
+		parent:  MAIN_WRAP,
+		child: [{
+			elem: 'p',
+			text: 'Hello! This is Miguel.'
+		}, {
+			elem: 'p',
+			text: "This page didn't load because your browser is too old. Sad."
+		}, {
+			elem: 'p',
+			child: [{
+				elem: 'span',
+				text: 'Have you tried '
+			}, {
+				elem: 'a',
+				attrs: { href: 'https://www.google.com/chrome' },
+				text: 'Google Chrome'
+			}, {
+				elem: 'span',
+				text: '?'
+			}]
+		}]
+	}
+
+	toDOM(oldBrowserMsg)
 }
 
 export default RenderOldBrowserMsg
