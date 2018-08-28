@@ -1,14 +1,12 @@
 {
-  "name": "cvd",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "Miguel Zuleta",
+  "name": "Miguel Zuleta's Portfolio",
+  "version": "2.2.0",
   "scripts": {
     "start": "gulp --watch",
     "prod": "gulp --prod",
     "deploy": "./deploy.sh"
   },
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel": "^6.23.0",
