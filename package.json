@@ -1,6 +1,7 @@
 {
   "author": "Miguel Zuleta",
-  "name": "Miguel Zuleta's Portfolio",
+  "name": "miguelzuleta.github.io",
+  "description": "Miguel Zuleta's Portfolio",
   "version": "2.2.0",
   "scripts": {
     "start": "gulp --watch",
