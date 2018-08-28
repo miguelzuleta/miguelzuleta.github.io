@@ -1,5 +1,4 @@
-let rotatingBG = () => {
-	let bg = document.querySelector('.bg-square')
+let rotatingBG = elem => {
 	let windowH = window.innerHeight
 	let windowW = window.innerWidth
 	let largerAxis = Math.max(windowH, windowW)
@@ -21,7 +20,7 @@ let rotatingBG = () => {
 
 	let { hypotenuse, dimensions, position } = squareSpecs
 
-	bg.style.cssText = `
+	elem.style.cssText = `
 		width: ${dimensions()}px;
 		height: ${dimensions()}px;
 		top: ${position().top}px;
