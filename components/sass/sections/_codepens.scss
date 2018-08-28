@@ -1,15 +1,4 @@
 .codepens {
-
-	&-list {
-		@include vport('medium') {
-			display: flex;
-		}
-
-		@include vport('small') {
-			flex-direction: column;
-		}
-	}
-
 	.pen {
 		position: relative;
 
@@ -53,12 +42,7 @@
 		}
 
 		@include vport('medium') {
-			height: 180px;
-
-			&:not(:last-child) {
-				margin-right: $barListSpacing;
-				margin-bottom: 0;
-			}
+			height: 420px;
 		}
 
 		@include vport('small') {
