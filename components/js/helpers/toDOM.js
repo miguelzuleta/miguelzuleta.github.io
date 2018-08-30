@@ -1,9 +1,8 @@
 const toDOM = props => {
 	let { parent, child } = props
 	let dataAttr = 'data-current-elem'
-	let parentContainer = document.querySelectorAll(parent)
-	let targetElements = Object.keys(parentContainer)
-							   .map(index => parentContainer[index])
+	let parentElems = document.querySelectorAll(parent)
+	let targetElements = Object.keys(parentElems).map(elem => parentElems[elem])
 
 	targetElements.forEach(parentEl => {
 		if (child) {
