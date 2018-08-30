@@ -38,6 +38,8 @@ let MZsite = () => {
 			RenderCodepens(codepens)
 			RenderContact(contact)
 
+			BODY.classList.add('data-loaded')
+
 			if (_isIE()) {
 				BODY.classList.add('ie')
 				return
@@ -45,8 +47,6 @@ let MZsite = () => {
 
 			let bgSquare = document.querySelector('.bg-square')
 			_handleBgRotation(bgSquare)
-
-			BODY.classList.add('data-loaded')
 		})
 	}
 
