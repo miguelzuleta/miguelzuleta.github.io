@@ -1,3 +1,5 @@
+import emphasis from './emphasis.js'
+
 const toDOM = props => {
 	let { parent, child } = props
 	let dataAttr = 'data-current-elem'
@@ -11,7 +13,7 @@ const toDOM = props => {
 				newElem.setAttribute(dataAttr, '')
 
 				if (childEl.text) {
-					newElem.innerHTML = childEl.text
+					newElem.innerHTML = emphasis(childEl.text);
 				}
 
 				for (let attrKey in childEl.attrs) {
