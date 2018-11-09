@@ -8,12 +8,12 @@
 		"list": {
 			"HTML5, Haml": 98,
 			"CSS3, Sass, Less": 96,
-			"JS ES5/6, jQuery": 82,
-			"ReactJS": 60,
+			"JS ES5/6, jQuery": 85,
+			"ReactJS": 70,
 			"NodeJS": 55,
-			"Electron": 70,
+			"Electron": 65,
 			"Gulp": 80,
-			"Github": 75,
+			"Github": 85,
 			"Photoshop": 95,
 			"Ping-pong": 100
 		}
@@ -54,7 +54,7 @@
 				"to": "Today"
 			},
 			"title": "Senior UI Developer",
-			"description": "Working onsite at Apple to develop and maintain a few of their product launch websites. Developing a site map generator as an Electron application for Level's design team that saves countless hours of manual labor and improves designer/client communication. Developing internal web tools that improve development and maintainability of asset building during specific projects."
+			"description": "Working onsite at Apple to develop and maintain a few of it's products websites. Developing internal web tools that improve development and maintainability of asset building and debugging during specific projects. Worked on the development a site map generator as an Electron application for Level's design team aimed to save countless hours of manual labor and improves designer/client communication."
 		}
 	},
 	"codepens": {
