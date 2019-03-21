@@ -9,12 +9,12 @@
 			"HTML5, Haml": 98,
 			"CSS3, Sass, Less": 96,
 			"JS ES5/6, jQuery": 85,
-			"ReactJS": 70,
-			"NodeJS": 55,
-			"Electron": 65,
 			"Gulp": 80,
 			"Github": 85,
-			"Photoshop": 95,
+			"Electron": 55,
+			"ReactJS": 60,
+			"NodeJS": 58,
+			"Photoshop": 90,
 			"Ping-pong": 100
 		}
 	},
@@ -60,10 +60,10 @@
 	"codepens": {
 		"title": "CSS Fun",
 		"pens": {
-			"JRPOpa": "CATS vs DOGS",
+			"WmMejR": "South Korean Flag",
 			"PezyLJ": "PI Mosaic",
 			"jrqVXO": "American Flag",
-			"WmMejR": "South Korean Flag"
+			"JRPOpa": "CATS vs DOGS"
 		}
 	},
 	"contact": {
