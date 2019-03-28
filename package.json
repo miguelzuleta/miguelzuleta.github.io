@@ -2,7 +2,7 @@
   "author": "Miguel Zuleta",
   "name": "miguelzuleta.github.io",
   "description": "Miguel Zuleta's Portfolio",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "scripts": {
     "start": "gulp --watch",
     "prod": "gulp --prod",
