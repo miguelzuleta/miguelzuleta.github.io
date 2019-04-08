@@ -7,7 +7,7 @@
     "start": "gulp --watch",
     "prod": "gulp --prod",
     "deploy": "./deploy.sh",
-    "test": "babel-node spec/run.js"
+    "test": "babel-node ./node_modules/.bin/jasmine"
   },
   "license": "ISC",
   "devDependencies": {
@@ -37,6 +37,10 @@
     "jasmine": "^3.3.1",
     "jshint": "^2.9.3",
     "jshint-stylish": "^2.2.1",
+    "karma": "^4.0.1",
+    "karma-cli": "^2.0.0",
+    "karma-jasmine": "^2.0.1",
+    "puppeteer": "^1.14.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0",
