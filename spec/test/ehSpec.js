@@ -1,23 +1,4 @@
-// var jsdom = require("jsdom");
-
-// window = jsdom.jsdom('<html><head></head><body><div id="rondavu_container"></div></body></html>').createWindow();
-
-// if(Object.keys(window).length === 0) {
-//     // this hapens if contextify, one of jsdom's dependencies doesn't install correctly
-//     // (it installs different code depending on the OS, so it cannot get checked in.);
-//     throw "jsdom failed to create a usable environment, try uninstalling and reinstalling it";
-// }
-
-// global.window = window;
-
-// global.document = window.document;
-
 import puppeteer from 'puppeteer'
-// import MZsite from '../../site/js.js'
-// import MZsite from '../../components/js/MZsite.js'
-// import fetchData from '../../components/js/MZsite.js'
-// import fetch from 'node-fetch'
-// import promisedData from '../../site/data.json'
 
 describe("MZsite runs", function() {
 	let browser;
@@ -29,31 +10,31 @@ describe("MZsite runs", function() {
 
 	let renderSections = {
 		page: {
-			msg: "renders page",
+			msg: "page",
 			selector: "body.data-loaded"
 		},
 		bg: {
-			msg: "renders bg wrapper section",
+			msg: "bg wrapper section",
 			selector: ".bg-wrap"
 		},
 		hero: {
-			msg: "renders hero section",
+			msg: "hero section",
 			selector: ".hero-msg-wrap"
 		},
 		skills: {
-			msg: "renders skills section",
+			msg: "skills section",
 			selector: ".skills.info"
 		},
 		exp: {
-			msg: "renders expirience section",
+			msg: "expirience section",
 			selector: ".exp.info"
 		},
 		codepen: {
-			msg: "renders codepen section",
+			msg: "codepen section",
 			selector: ".codepens.info"
 		},
 		contact: {
-			msg: "renders contact section",
+			msg: "contact section",
 			selector: ".contact.info"
 		}
 	}
@@ -67,7 +48,7 @@ describe("MZsite runs", function() {
 	for (let section in renderSections) {
 		let { msg, selector } = renderSections[section];
 
-		it(msg, async () => {
+		it(`renders ${msg}`, async () => {
 			let sectionLoad = await page.waitForSelector(selector, waitOptions);
 
 			expect(sectionLoad !== null).toBe(true);

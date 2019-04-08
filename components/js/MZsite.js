@@ -17,8 +17,6 @@ let MZsite = () => {
 		} else {
 			_renderSections()
 		}
-
-		// return 9
 	}
 
 	let _fetchData = jsonFile => {
