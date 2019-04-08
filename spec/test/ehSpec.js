@@ -5,22 +5,26 @@ describe("MZsite runs", function() {
 	let browser;
 	let page;
 
-	beforeAll(async function() {
+	beforeAll(async () => {
 		browser = await puppeteer.launch({ headless: true });
 		page = await browser.newPage();
 		await page.goto('https://miguelzuleta.com');
-		await page.waitForSelector('body.data-loaded', { visible: true })
-		const pageHTML = await page.evaluate(() => {
-			return document.querySelector('body').innerHTML;
-		});
-		console.log(pageHTML);
 	});
 
-	it("init() exists", function() {
+	it("page renders", async () => {
+		let pageLoads = await page.waitForSelector('body.data-loaded', {
+			visible: true,
+			timeout: 500
+		 })
+
+		expect(pageLoads !== null).toBe(true);
+	})
+
+	it("init() exists", () => {
 		expect(MZsite().init()).not.toBe(null);
 	});
 
-	it("init() returns number", function() {
+	it("init() returns number", () => {
 		expect(MZsite().init()).toBe(9);
 	});
 
