@@ -43,7 +43,12 @@ describe("MZsite runs", function() {
 		browser = await puppeteer.launch({ headless: true });
 		page = await browser.newPage();
 		await page.goto('http://localhost:8080/');
-	});
+	})
+
+	afterAll(() => {
+		console.log(' page is closing')
+		page.close();
+	})
 
 	for (let section in renderSections) {
 		let { msg, selector } = renderSections[section];
@@ -55,4 +60,4 @@ describe("MZsite runs", function() {
 		})
 	}
 
-});
+})
