@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
 
-describe("Load sections of the page", function() {
+describe("Load sections of the page", () => {
 	let mzSite = path.join(__dirname, `/../../components/js/MZsite.js`);
 	let originalFileData = '';
 
@@ -62,11 +62,10 @@ describe("Load sections of the page", function() {
 	})
 
 	afterAll(() => {
-		console.log(' page is closing')
 		page.close();
 	})
 
-	fdescribe('Load sections on modern browsers', () => {
+	describe('Load sections on modern browsers', () => {
 		for (let section in sections) {
 			let { msg, selector } = sections[section];
 
@@ -79,34 +78,34 @@ describe("Load sections of the page", function() {
 		}
 	})
 
-	describe('Load fallback on super old browsers', () => {
-		beforeAll(() => {
-			fs.readFile(mzSite, 'utf8', (err, data) => {
-				originalFileData = data;
-				let switchFetch = data.replace(/\!self\.fetch/m, 'self.fetch');
+	// describe('Load fallback on super old browsers', () => {
+	// 	beforeAll(() => {
+	// 		fs.readFile(mzSite, 'utf8', (err, data) => {
+	// 			originalFileData = data;
+	// 			let switchFetch = data.replace(/\!self\.fetch/m, 'self.fetch');
 
-				fs.writeFile(mzSite, switchFetch, err => {
-					if (err) throw err
-				})
-			})
-		})
+	// 			fs.writeFile(mzSite, switchFetch, err => {
+	// 				if (err) throw err
+	// 			})
+	// 		})
+	// 	})
 
-		afterAll(() => {
-			fs.writeFile(mzSite, originalFileData, err => {
-				if (err) throw err
-			});
-		})
+	// 	afterAll(() => {
+	// 		fs.writeFile(mzSite, originalFileData, err => {
+	// 			if (err) throw err
+	// 		});
+	// 	})
 
-		for (let section in oldBrowserSections) {
-			let { msg, selector } = oldBrowserSections[section];
+	// 	for (let section in oldBrowserSections) {
+	// 		let { msg, selector } = oldBrowserSections[section];
 
-			it(`renders ${msg}`, async () => {
-				let sectionLoad = await page.waitForSelector(selector, waitOptions);
+	// 		it(`renders ${msg}`, async () => {
+	// 			let sectionLoad = await page.waitForSelector(selector, waitOptions);
 
-				expect(sectionLoad !== null).toBe(true);
-			})
+	// 			expect(sectionLoad !== null).toBe(true);
+	// 		})
 
-		}
-	})
+	// 	}
+	// })
 
 })
