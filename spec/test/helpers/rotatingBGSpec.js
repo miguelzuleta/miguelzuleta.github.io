@@ -5,89 +5,57 @@ describe('Dimensions of rotating hero background', () => {
 
 	let browser;
 	let page;
-	// this.computedStyles = 76543;
-
-	// let computedStyles = el => {
-	// 	let getStyles = JSON.parse(JSON.stringify(getComputedStyle(el)));
-
-	// 	return {
-	// 		width: parseFloat(getStyles.width),
-	// 		height: parseFloat(getStyles.height),
-	// 		top: parseFloat(getStyles.top),
-	// 		left: parseFloat(getStyles.left)
-	// 	};
-	// }
+	let viewports = [
+		{
+			width: 1000,
+			height: 1000,
+			expectation: {
+				width: 1414.2,
+				height: 1414.2,
+				top: -207.107,
+				left: -207.107
+			}
+		},
+		{
+			width: 1500,
+			height: 500,
+			expectation: {
+				width: 1581.12,
+				height: 1581.12,
+				top: -540.569,
+				left: -40.5694
+			}
+		}
+	];
 
 	beforeEach(async () => {
 		browser = await puppeteer.launch({ headless: true });
 		page = await browser.newPage();
 		await page.goto('http://localhost:8080/');
-
-		// computedStyles = el => {
-		// 	let getStyles = JSON.parse(JSON.stringify(getComputedStyle(el)));
-
-		// 	return {
-		// 		width: parseFloat(getStyles.width),
-		// 		height: parseFloat(getStyles.height),
-		// 		top: parseFloat(getStyles.top),
-		// 		left: parseFloat(getStyles.left)
-		// 	};
-		// }
-		// console.log(this.computedStyles)
 	})
 
 	afterEach(() => {
 		page.close();
 	})
 
-	it('calculates page at 1000px X 1000px', async () => {
-		await page.setViewport({ width: 1000, height: 1000 });
+	viewports.forEach(viewport => {
+		let { width, height, expectation } = viewport;
 
-		let styles = await page.$eval('.bg-square', el => {
+		it(`calculates dimensions with browser at ${width}px X ${height}px`, async () => {
+			await page.setViewport({ width: width, height: height });
 
-			// return computedStyles(el);
-			// console.log(computedStyles);
+			let styles = await page.$eval('.bg-square', el => {
+				let getStyles = JSON.parse(JSON.stringify(getComputedStyle(el)));
 
-			let getStyles = JSON.parse(JSON.stringify(getComputedStyle(el)));
-			// console.log(getStyles)
+				return {
+					width: parseFloat(getStyles.width),
+					height: parseFloat(getStyles.height),
+					top: parseFloat(getStyles.top),
+					left: parseFloat(getStyles.left)
+				};
+			});
 
-			return {
-				width: parseFloat(getStyles.width),
-				height: parseFloat(getStyles.height),
-				top: parseFloat(getStyles.top),
-				left: parseFloat(getStyles.left)
-			};
-		});
-
-		expect(styles).toEqual({
-			width: 1414.2,
-			height: 1414.2,
-			top: -207.107,
-			left: -207.107
-		});
-	})
-
-	it('calculates page at 1500px X 500px', async () => {
-		await page.setViewport({ width: 1500, height: 500 });
-
-		let styles = await page.$eval('.bg-square', el => {
-
-			let getStyles = JSON.parse(JSON.stringify(getComputedStyle(el)));
-			// console.log(this.computedStyles)
-
-			return {
-				width: parseFloat(getStyles.width),
-				height: parseFloat(getStyles.height),
-				top: parseFloat(getStyles.top),
-				left: parseFloat(getStyles.left)
-			};
-		});
-
-		expect(styles).toEqual({
-			width: 1581.12,
-			height: 1581.12,
-			top: -540.569,
-			left: -40.5694
-		});
+			expect(styles).toEqual(expectation);
+		})
 	})
 })
