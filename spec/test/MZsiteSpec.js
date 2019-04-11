@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer'
 import path from 'path'
 import fs from 'fs'
 
-describe("Load sections of the page", () => {
+describe("Rendered page sections", () => {
 	let mzSite = path.join(__dirname, `/../../components/js/MZsite.js`);
 	let originalFileData = '';
 

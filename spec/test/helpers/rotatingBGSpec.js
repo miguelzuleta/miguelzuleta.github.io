@@ -25,6 +25,16 @@ describe('Dimensions of rotating hero background', () => {
 				top: -540.569,
 				left: -40.5694
 			}
+		},
+		{
+			width: 400,
+			height: 1050,
+			expectation: {
+				width: 1123.61,
+				height: 1123.61,
+				top: -36.8051,
+				left: -361.805
+			}
 		}
 	];
 
