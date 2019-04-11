@@ -45,13 +45,18 @@ describe('Dimensions of rotating hero background', () => {
 			await page.setViewport({ width: width, height: height });
 
 			let styles = await page.$eval('.bg-square', el => {
-				let getStyles = JSON.parse(JSON.stringify(getComputedStyle(el)));
+
+				let computedStyle = parseFloat(
+					JSON.parse(
+						JSON.stringify(getComputedStyle(el)
+					)
+				));
 
 				return {
-					width: parseFloat(getStyles.width),
-					height: parseFloat(getStyles.height),
-					top: parseFloat(getStyles.top),
-					left: parseFloat(getStyles.left)
+					width: computedStyle.width,
+					height: computedStyle.height,
+					top: computedStyle.top,
+					left: computedStyle.left
 				};
 			});
 
