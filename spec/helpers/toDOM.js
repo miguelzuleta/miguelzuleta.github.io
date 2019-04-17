@@ -12,4 +12,20 @@ if (global.process === undefined) {
 			text: 'toDOM text'
 		}]
 	})
+
+	let list = Array(7).fill().map((el, index) => {
+		return {
+			elem: 'li',
+			attrs: { class: `list-elem list-elem-${index}`},
+			text: `element ${index}`
+		}
+	})
+
+	toDOM({
+		parent: 'body',
+		child: [{
+			elem: 'ul',
+			child: list
+		}]
+	})
 }

@@ -108,6 +108,22 @@ if (global.process === undefined) {
 			text: 'toDOM text'
 		}]
 	});
+
+	var list = Array(7).fill().map(function (el, index) {
+		return {
+			elem: 'li',
+			attrs: { class: 'list-elem list-elem-' + index },
+			text: 'element ' + index
+		};
+	});
+
+	(0, _toDOM2.default)({
+		parent: 'body',
+		child: [{
+			elem: 'ul',
+			child: list
+		}]
+	});
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})

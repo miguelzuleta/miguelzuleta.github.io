@@ -123,6 +123,28 @@ gulp.task('sass', () => {
 
 gulp.task('js', () => {
 	browserify({
+			entries: 'spec/helpers/toDOM.js',
+			transform: [ babelify ]
+		})
+		.bundle()
+		.pipe(source('components/js/main.js'))
+		.pipe(buffer())
+		.pipe(rename('toDOM.built.js'))
+		// .pipe(uglify())
+		.pipe(gulp.dest('./spec/helpers/'))
+
+	browserify({
+			entries: 'spec/helpers/toDOM.js',
+			transform: [ babelify ]
+		})
+		.bundle()
+		.pipe(source('spec/helpers/toDOM.js'))
+		.pipe(buffer())
+		.pipe(rename('toDOM.built.js'))
+		// .pipe(uglify())
+		.pipe(gulp.dest('./spec/helpers/'))
+
+	browserify({
 			entries: 'components/js/main.js',
 			debug: showSourcemaps,
 			transform: [ babelify ]
@@ -144,7 +166,7 @@ gulp.task('watch', () => {
 	console.log('\n\nWatching for changes...\n\n')
 	gulp.watch('components/sass/**/*.scss', ['sass'])
 	gulp.watch('components/html/**/*.html', ['html'])
-	gulp.watch('components/js/**/*.js', ['js', 'lint'])
+	gulp.watch(['components/js/**/*.js', 'spec/helpers/*.js'], ['js', 'lint'])
 	gulp.watch(`./${dataFile}`, ['data'])
 })
 
