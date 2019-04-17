@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer'
 import path from 'path'
 
 describe('Elements appended to DOM via object', function() {
-	let testFile = path.join('file://', __dirname, `/../../helpers/test-file.html`);
+	let testFile = path.join('file://', __dirname, `/../../helpers/toDOM.html`);
 	let browser;
 	let page;
 
