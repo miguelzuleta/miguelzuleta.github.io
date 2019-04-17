@@ -17,16 +17,13 @@ describe('Elements appended to DOM via object', function() {
 		page.close();
 	})
 
-	describe('fuck', () => {
+	it('loads section element', async () => {
 
-		it('grabs', async () => {
-
-			let html = await page.$eval('section', el => {
-				return el.innerHTML;
-			})
-
-			console.log(html);
+		let html = await page.$eval('section', el => {
+			return el.innerHTML;
 		})
+
+		console.log(html);
 	})
 
 })

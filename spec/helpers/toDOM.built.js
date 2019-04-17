@@ -90,7 +90,7 @@ exports.default = toDOM;
 (function (global){
 'use strict';
 
-var _toDOM = require('./toDOM.js');
+var _toDOM = require('../../components/js/helpers/toDOM.js');
 
 var _toDOM2 = _interopRequireDefault(_toDOM);
 
@@ -104,15 +104,7 @@ if (global.process === undefined) {
 			text: 'MORE TESTINGS'
 		}]
 	});
-
-	(0, _toDOM2.default)({
-		parent: 'body',
-		child: [{
-			elem: 'aside',
-			text: 'fuck yes'
-		}]
-	});
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./toDOM.js":2}]},{},[1,2,3]);
+},{"../../components/js/helpers/toDOM.js":2}]},{},[3]);

@@ -7,12 +7,8 @@
     "start": "gulp --watch",
     "prod": "gulp --prod",
     "deploy": "./deploy.sh",
-    "test": "babel-node ./node_modules/.bin/jasmine",
-    "toDOM": "npx babel ./components/js/helpers/toDOM.js -o ./spec/helpers/toDOM.js",
-    "emphasis": "npx babel ./components/js/helpers/emphasis.js -o ./spec/helpers/emphasis.js",
-    "testDOM": "npx babel ./spec/helpers/toDOM_test.js -o ./spec/helpers/toDOM_test.built.js",
-    "expose": "npm run toDOM & npm run emphasis && npm run testDOM",
-    "sp": "npm run expose && browserify ./spec/helpers/emphasis.js ./spec/helpers/toDOM.js ./spec/helpers/toDOM_test.built.js -o ./spec/helpers/expose.built.js && npm test"
+    "test": "npm run toDOM && babel-node ./node_modules/.bin/jasmine",
+    "toDOM": "browserify -t babelify ./spec/helpers/toDOM.js -o ./spec/helpers/toDOM.built.js"
   },
   "license": "ISC",
   "devDependencies": {
