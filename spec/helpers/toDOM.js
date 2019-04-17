@@ -5,7 +5,11 @@ if (global.process === undefined) {
 		parent: 'body',
 		child: [{
 			elem: 'section',
-			text: 'MORE TESTINGS'
+			attrs: {
+				id: 'to-dom-id',
+				class: 'to-dom-class'
+			},
+			text: 'toDOM text'
 		}]
 	})
 }

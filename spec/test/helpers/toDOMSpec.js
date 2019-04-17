@@ -17,13 +17,16 @@ describe('Elements appended to DOM via object', function() {
 		page.close();
 	})
 
-	it('loads section element', async () => {
+	it('loads correct text in element', async () => {
+		let sectionText = await page.$eval('section', el => el.innerHTML);
 
-		let html = await page.$eval('section', el => {
-			return el.innerHTML;
-		})
+		expect(sectionText).toBe('toDOM text');
+	})
 
-		console.log(html);
+	it('_', async () => {
+		let sectionText = await page.$eval('body', el => el.innerHTML);
+
+		console.log(sectionText)
 	})
 
 })

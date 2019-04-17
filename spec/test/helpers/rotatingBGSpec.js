@@ -51,7 +51,7 @@ describe('Dimensions of rotating hero background', () => {
 	viewports.forEach(viewport => {
 		let { width, height, expectation } = viewport;
 
-		it(`calculates dimensions with browser at ${width}px X ${height}px`, async () => {
+		xit(`calculates dimensions with browser at ${width}px X ${height}px`, async () => {
 			await page.setViewport({ width: width, height: height });
 
 			let styles = await page.$eval('.bg-square', el => {

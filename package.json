@@ -7,8 +7,8 @@
     "start": "gulp --watch",
     "prod": "gulp --prod",
     "deploy": "./deploy.sh",
-    "toDOM": "browserify -t babelify ./spec/helpers/toDOM.js -o ./spec/helpers/toDOM.built.js",
-    "test": "npm run toDOM && babel-node ./node_modules/.bin/jasmine"
+    "toDOM": "browserify -t babelify ./spec/helpers/toDOM.js -o ./spec/helpers/toDOM.built.js && npm test",
+    "test": "babel-node ./node_modules/.bin/jasmine"
   },
   "license": "ISC",
   "devDependencies": {
