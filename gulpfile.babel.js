@@ -31,6 +31,7 @@ let showSourcemaps = true
 let minifyHMTL = false
 let runConnect = ['connect']
 let runWatch = []
+let runTests = []
 let compressJSON = []
 let dataFile = 'data.json'
 
@@ -48,6 +49,10 @@ if (argv.prod) {
 
 if (argv.watch) {
 	runWatch = ['watch']
+}
+
+if (argv.tests) {
+	runTests = ['spec/helpers/*.js']
 }
 
 if (argv.deploy) {
@@ -122,40 +127,45 @@ gulp.task('sass', () => {
 })
 
 gulp.task('js', () => {
-	browserify({
+	let browTask = [
+		{
 			entries: 'spec/helpers/toDOM.js',
-			transform: [ babelify ]
-		})
-		.bundle()
-		.pipe(source('components/js/main.js'))
-		.pipe(buffer())
-		.pipe(rename('toDOM.built.js'))
-		// .pipe(uglify())
-		.pipe(gulp.dest('./spec/helpers/'))
-
-	browserify({
+			debug: false,
+			source: 'components/js/main.js',
+			rename: 'toDOM.built.js',
+			dest: './spec/helpers/'
+		},
+		{
 			entries: 'spec/helpers/toDOM.js',
-			transform: [ babelify ]
-		})
-		.bundle()
-		.pipe(source('spec/helpers/toDOM.js'))
-		.pipe(buffer())
-		.pipe(rename('toDOM.built.js'))
-		// .pipe(uglify())
-		.pipe(gulp.dest('./spec/helpers/'))
-
-	browserify({
+			debug: false,
+			source: 'spec/helpers/toDOM.js',
+			rename: 'toDOM.built.js',
+			dest: './spec/helpers/'
+		},
+		{
 			entries: 'components/js/main.js',
 			debug: showSourcemaps,
+			source: 'components/js/main.js',
+			rename: 'js.js',
+			dest: dir,
+			reload: true
+		}
+	];
+
+	browTask.forEach(opt => {
+		browserify({
+			entries: opt.entries,
+			debug: opt.debug,
 			transform: [ babelify ]
 		})
 		.bundle()
-		.pipe(source('components/js/main.js'))
+		.pipe(source(opt.source))
 		.pipe(buffer())
-		.pipe(rename('js.js'))
+		.pipe(rename(opt.rename))
 		.pipe(gulpif(!showSourcemaps, uglify()))
-		.pipe(gulp.dest(dir))
-		.pipe(connect.reload())
+		.pipe(gulp.dest(opt.dest))
+		.pipe(gulpif(opt.reload, connect.reload()))
+	})
 })
 
 gulp.task('data', () => {
@@ -166,7 +176,7 @@ gulp.task('watch', () => {
 	console.log('\n\nWatching for changes...\n\n')
 	gulp.watch('components/sass/**/*.scss', ['sass'])
 	gulp.watch('components/html/**/*.html', ['html'])
-	gulp.watch(['components/js/**/*.js', 'spec/helpers/*.js'], ['js', 'lint'])
+	gulp.watch(['components/js/**/*.js', ...runTests], ['js', 'lint'])
 	gulp.watch(`./${dataFile}`, ['data'])
 })
 
