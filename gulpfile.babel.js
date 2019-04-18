@@ -170,6 +170,11 @@ gulp.task('js', () => {
 
 gulp.task('data', () => {
 	copyDataToSite()
+
+	browserify({ entries: dataFile })
+		.bundle()
+		.pipe(source(dataFile))
+		.pipe(connect.reload())
 })
 
 gulp.task('watch', () => {
