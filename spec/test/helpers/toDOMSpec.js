@@ -52,10 +52,4 @@ describe('Elements appended to DOM via object', function() {
 		expect(elem0).toBe('element 0');
 	})
 
-	it('_', async () => {
-		let sectionText = await page.$eval('body', el => el.innerHTML);
-
-		console.log(sectionText)
-	})
-
 })

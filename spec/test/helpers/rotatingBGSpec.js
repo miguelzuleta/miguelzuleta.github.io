@@ -39,7 +39,7 @@ describe('Dimensions of rotating hero background', () => {
 	];
 
 	beforeEach(async () => {
-		browser = await puppeteer.launch({ headless: true });
+		browser = await puppeteer.launch({ headless: false });
 		page = await browser.newPage();
 		await page.goto('http://localhost:8080/');
 	})
@@ -51,7 +51,7 @@ describe('Dimensions of rotating hero background', () => {
 	viewports.forEach(viewport => {
 		let { width, height, expectation } = viewport;
 
-		xit(`calculates dimensions with browser at ${width}px X ${height}px`, async () => {
+		it(`calculates dimensions with browser at ${width}px X ${height}px`, async () => {
 			await page.setViewport({ width: width, height: height });
 
 			let styles = await page.$eval('.bg-square', el => {
