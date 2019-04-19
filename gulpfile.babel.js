@@ -31,6 +31,7 @@ let showSourcemaps = true
 let minifyHMTL = false
 let runConnect = ['connect']
 let runWatch = []
+let runTests = []
 let compressJSON = []
 let dataFile = 'data.json'
 
@@ -48,6 +49,10 @@ if (argv.prod) {
 
 if (argv.watch) {
 	runWatch = ['watch']
+}
+
+if (argv.tests) {
+	runTests = ['spec/helpers/*.js']
 }
 
 if (argv.deploy) {
@@ -122,29 +127,68 @@ gulp.task('sass', () => {
 })
 
 gulp.task('js', () => {
-	browserify({
-			entries: 'components/js/main.js',
+	let commonOpt = {
+		toDOM: 'spec/helpers/toDOM.js',
+		domJS: 'toDOM.built.js',
+		helpers: './spec/helpers/',
+		main: 'components/js/main.js'
+	}
+
+	let browserifyTaskOptions = [
+		{
+			entries: commonOpt.toDOM,
+			debug: false,
+			source: commonOpt.main,
+			rename: commonOpt.domJS,
+			dest: commonOpt.helpers
+		},
+		{
+			entries: commonOpt.toDOM,
+			debug: false,
+			source: commonOpt.toDOM,
+			rename: commonOpt.domJS,
+			dest: commonOpt.helpers
+		},
+		{
+			entries: commonOpt.main,
 			debug: showSourcemaps,
+			source: commonOpt.main,
+			rename: 'js.js',
+			dest: dir,
+			reload: true
+		}
+	];
+
+	browserifyTaskOptions.forEach(opt => {
+		browserify({
+			entries: opt.entries,
+			debug: opt.debug,
 			transform: [ babelify ]
 		})
 		.bundle()
-		.pipe(source('components/js/main.js'))
+		.pipe(source(opt.source))
 		.pipe(buffer())
-		.pipe(rename('js.js'))
+		.pipe(rename(opt.rename))
 		.pipe(gulpif(!showSourcemaps, uglify()))
-		.pipe(gulp.dest(dir))
-		.pipe(connect.reload())
+		.pipe(gulp.dest(opt.dest))
+		.pipe(gulpif(opt.reload, connect.reload()))
+	})
 })
 
 gulp.task('data', () => {
 	copyDataToSite()
+
+	browserify({ entries: dataFile })
+		.bundle()
+		.pipe(source(dataFile))
+		.pipe(connect.reload())
 })
 
 gulp.task('watch', () => {
 	console.log('\n\nWatching for changes...\n\n')
 	gulp.watch('components/sass/**/*.scss', ['sass'])
 	gulp.watch('components/html/**/*.html', ['html'])
-	gulp.watch('components/js/**/*.js', ['js', 'lint'])
+	gulp.watch(['components/js/**/*.js', ...runTests], ['js', 'lint'])
 	gulp.watch(`./${dataFile}`, ['data'])
 })
 
