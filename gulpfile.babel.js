@@ -127,32 +127,39 @@ gulp.task('sass', () => {
 })
 
 gulp.task('js', () => {
-	let browTask = [
+	let commonOpt = {
+		toDOM: 'spec/helpers/toDOM.js',
+		domJS: 'toDOM.built.js',
+		helpers: './spec/helpers/',
+		main: 'components/js/main.js'
+	}
+
+	let browserifyTaskOptions = [
 		{
-			entries: 'spec/helpers/toDOM.js',
+			entries: commonOpt.toDOM,
 			debug: false,
-			source: 'components/js/main.js',
-			rename: 'toDOM.built.js',
-			dest: './spec/helpers/'
+			source: commonOpt.main,
+			rename: commonOpt.domJS,
+			dest: commonOpt.helpers
 		},
 		{
-			entries: 'spec/helpers/toDOM.js',
+			entries: commonOpt.toDOM,
 			debug: false,
-			source: 'spec/helpers/toDOM.js',
-			rename: 'toDOM.built.js',
-			dest: './spec/helpers/'
+			source: commonOpt.toDOM,
+			rename: commonOpt.domJS,
+			dest: commonOpt.helpers
 		},
 		{
-			entries: 'components/js/main.js',
+			entries: commonOpt.main,
 			debug: showSourcemaps,
-			source: 'components/js/main.js',
+			source: commonOpt.main,
 			rename: 'js.js',
 			dest: dir,
 			reload: true
 		}
 	];
 
-	browTask.forEach(opt => {
+	browserifyTaskOptions.forEach(opt => {
 		browserify({
 			entries: opt.entries,
 			debug: opt.debug,

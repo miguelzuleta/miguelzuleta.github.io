@@ -55,17 +55,17 @@ describe("Rendered page sections", () => {
 		}
 	}
 
-	beforeAll(async () => {
-		browser = await puppeteer.launch({ headless: true });
-		page = await browser.newPage();
-		await page.goto('http://localhost:8080/');
-	})
-
-	afterAll(() => {
-		page.close();
-	})
-
 	describe('Load sections on modern browsers', () => {
+		beforeAll(async () => {
+			browser = await puppeteer.launch({ headless: true });
+			page = await browser.newPage();
+			await page.goto('http://localhost:8080/');
+		})
+
+		afterAll(() => {
+			page.close();
+		})
+
 		for (let section in sections) {
 			let { msg, selector } = sections[section];
 
@@ -77,35 +77,5 @@ describe("Rendered page sections", () => {
 
 		}
 	})
-
-	// describe('Load fallback on super old browsers', () => {
-	// 	beforeAll(() => {
-	// 		fs.readFile(mzSite, 'utf8', (err, data) => {
-	// 			originalFileData = data;
-	// 			let switchFetch = data.replace(/\!self\.fetch/m, 'self.fetch');
-
-	// 			fs.writeFile(mzSite, switchFetch, err => {
-	// 				if (err) throw err
-	// 			})
-	// 		})
-	// 	})
-
-	// 	afterAll(() => {
-	// 		fs.writeFile(mzSite, originalFileData, err => {
-	// 			if (err) throw err
-	// 		});
-	// 	})
-
-	// 	for (let section in oldBrowserSections) {
-	// 		let { msg, selector } = oldBrowserSections[section];
-
-	// 		it(`renders ${msg}`, async () => {
-	// 			let sectionLoad = await page.waitForSelector(selector, waitOptions);
-
-	// 			expect(sectionLoad !== null).toBe(true);
-	// 		})
-
-	// 	}
-	// })
 
 })
