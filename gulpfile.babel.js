@@ -130,7 +130,7 @@ gulp.task('js', () => {
 	let commonOpt = {
 		toDOM: 'spec/helpers/toDOM.js',
 		domJS: 'toDOM.built.js',
-		helpers: './spec/helpers/',
+		helpers: './spec/helpers/built/',
 		main: 'components/js/main.js'
 	}
 
