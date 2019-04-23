@@ -1,7 +1,7 @@
 {
 	"hero": {
 		"headline": "Miguel Zuleta",
-		"intro": "UI Developer"
+		"intro": "Senior UI Developer"
 	},
 	"skills": {
 		"title": "Skills",
@@ -27,7 +27,7 @@
 				"to": " 03/14"
 			},
 			"title": "Senior Web Designer",
-			"description": "Responsible for design and development of ad banners, e&#8209;mail campaigns, websites, game launchers, landing pages, teaser sites, video trailers, branding, and logo builds. Lead team's production efficiency and acceleration with the reinforcement and management of custom built templates for several design related tasks."
+			"description": "Responsible for the design and development of banners ads, e&#8209;mail campaigns, game sites, landing pages and branding. Accelerated design team's production process by over 500% with custom built templates, allowing a team to produce in one day what it previously took one week."
 		},
 		"job-2": {
 			"company": "Trion Worlds",
@@ -36,7 +36,7 @@
 				"to": "08/15"
 			},
 			"title": "Senior Web Designer/Developer",
-			"description": "Worked as part of both the design and development teams to put together animated banner ads, email campaigns, responsive landing pages, and responsive game websites. Pioneered the design and development of multi-team templates and guideline documents for faster design and easier front-end implementation of various game sites."
+			"description": "Served as the only hybrid designer/developer in the team, responsible for creating animated banner ads, email campaigns, responsive landing pages. Pioneered multi-team templates that reduced project design and front-end implementation time from ten to three days, increasing production speed three fold."
 		},
 		"job-3": {
 			"company": "Toovia",
@@ -45,7 +45,7 @@
 				"to": "06/16"
 			},
 			"title": "UI Developer",
-			"description": "Established processes and communication practices between design, development teams and clients during every phase of the project to ensure smooth and efficient implementation. Developed web tools to enhance the company's website builder to work more efficiently on mobile devices."
+			"description": "Lead designers establishing processes and communication practices across teams and clients during every phase of the project to ensure smooth and efficient implementation. Collaborated on company platform's web tools to enhance the client's website builder to work more efficiently on mobile devices."
 		},
 		"job-4": {
 			"company": "Apple *(via Level Studios)*",
@@ -54,7 +54,7 @@
 				"to": "Today"
 			},
 			"title": "Senior UI Developer",
-			"description": "Developing and maintaining several marketing websites for WWDC and product launch events. Implementing internal web tools that accelerate the production process between dev and design teams. Initiated the development of a site map generator for the design team that reduces work time from weeks to a couple of minutes."
+			"description": "Developing and maintaining several marketing websites for WWDC and product launch events. Implemented internal web tools that accelerate the production process between dev and design teams. Initiated the development of a site map generator for the design team that substantially reduces work time from weeks to a couple of minutes."
 		}
 	},
 	"codepens": {
