@@ -44,17 +44,6 @@ describe("Rendered page sections", () => {
 		}
 	}
 
-	let oldBrowserSections = {
-		old: {
-			msg: "old browser class",
-			selector: "body.old-browser"
-		},
-		msg: {
-			msg: "old browser message",
-			selector: "main .msg"
-		}
-	}
-
 	describe('Load sections on modern browsers', () => {
 		beforeAll(async () => {
 			browser = await puppeteer.launch({ headless: true });
