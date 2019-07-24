@@ -23,6 +23,7 @@ deleteInit
 
 git checkout dev site
 mv site/* .
+rm -rf spec
 rm -rf site
 commitToBranch
 
