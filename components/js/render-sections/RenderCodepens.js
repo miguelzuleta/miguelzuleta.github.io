@@ -1,9 +1,9 @@
-import toDOM from '../helpers/toDOM'
-import sectionWrap from '../site-modules/section-wrap'
+import toDOM from '../helpers/toDOM';
+import sectionWrap from '../site-modules/section-wrap';
 
 let RenderSkills = dataObj => {
-	let { title, pens } = dataObj
-	let pensList = []
+	let { title, pens } = dataObj;
+	let pensList = [];
 
 	for(let key in pens) {
 		pensList.push({
@@ -31,9 +31,9 @@ let RenderSkills = dataObj => {
 		})
 	}
 
-	let pensData = sectionWrap('codepens', title, pensList)
+	let pensData = sectionWrap('codepens', title, pensList);
 
-	toDOM(pensData)
+	toDOM(pensData);
 }
 
-export default RenderSkills
+export default RenderSkills;

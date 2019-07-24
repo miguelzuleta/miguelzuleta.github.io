@@ -1,4 +1,4 @@
-import { MAIN_WRAP } from '../helpers/constants.js'
+import { MAIN_WRAP } from '../helpers/constants.js';
 
 const sectionWrap = (sectionClass, sectionTitle, sectionList) => {
 	return {
@@ -23,4 +23,4 @@ const sectionWrap = (sectionClass, sectionTitle, sectionList) => {
 	}
 }
 
-export default sectionWrap
+export default sectionWrap;

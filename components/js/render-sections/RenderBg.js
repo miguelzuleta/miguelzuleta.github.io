@@ -1,5 +1,5 @@
-import { MAIN_WRAP } from '../helpers/constants.js'
-import toDOM from '../helpers/toDOM'
+import { MAIN_WRAP } from '../helpers/constants.js';
+import toDOM from '../helpers/toDOM';
 
 let RenderBg = () => {
 	let heroData = {
@@ -14,7 +14,7 @@ let RenderBg = () => {
 		}]
 	}
 
-	toDOM(heroData)
+	toDOM(heroData);
 }
 
-export default RenderBg
+export default RenderBg;

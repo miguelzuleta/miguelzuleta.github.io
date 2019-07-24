@@ -1,12 +1,12 @@
-import toDOM from '../helpers/toDOM'
-import sectionWrap from '../site-modules/section-wrap'
+import toDOM from '../helpers/toDOM';
+import sectionWrap from '../site-modules/section-wrap';
 
 let RenderExp = dataObj => {
-	let { title } = dataObj
-	let expList = []
+	let { title } = dataObj;
+	let expList = [];
 
 	for(let key in dataObj) {
-		let { company, duration, title, description } = dataObj[key]
+		let { company, duration, title, description } = dataObj[key];
 
 		if (key !== 'title') {
 			expList.push({
@@ -33,9 +33,9 @@ let RenderExp = dataObj => {
 		}
 	}
 
-	let expData = sectionWrap('exp', title, expList)
+	let expData = sectionWrap('exp', title, expList);
 
-	toDOM(expData)
+	toDOM(expData);
 }
 
-export default RenderExp
+export default RenderExp;

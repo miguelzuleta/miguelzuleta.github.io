@@ -1,10 +1,10 @@
-import toDOM from '../helpers/toDOM'
-import sectionWrap from '../site-modules/section-wrap'
+import toDOM from '../helpers/toDOM';
+import sectionWrap from '../site-modules/section-wrap';
 
 let RenderSkills = dataObj => {
-	let { title, list } = dataObj
+	let { title, list } = dataObj;
 
-	let skillList = []
+	let skillList = [];
 
 	for(let key in list) {
 		skillList.push({
@@ -21,9 +21,9 @@ let RenderSkills = dataObj => {
 		})
 	}
 
-	let skillsData = sectionWrap('skills', title, skillList)
+	let skillsData = sectionWrap('skills', title, skillList);
 
-	toDOM(skillsData)
+	toDOM(skillsData);
 }
 
-export default RenderSkills
+export default RenderSkills;

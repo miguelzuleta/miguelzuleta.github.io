@@ -1,3 +1,3 @@
-import MZsite from './MZsite.js'
+import MZsite from './MZsite.js';
 
-MZsite().init()
+MZsite().init();

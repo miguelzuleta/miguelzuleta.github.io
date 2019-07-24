@@ -1,14 +1,14 @@
 let rotatingBG = elem => {
-	let windowH = window.innerHeight
-	let windowW = window.innerWidth
-	let largerAxis = Math.max(windowH, windowW)
+	let windowH = window.innerHeight;
+	let windowW = window.innerWidth;
+	let largerAxis = Math.max(windowH, windowW);
 
 	let squareSpecs = {
 		hypotenuse: function() {
-			return Math.hypot(windowH, windowW)
+			return Math.hypot(windowH, windowW);
 		},
 		dimensions: function() {
-			return largerAxis + (hypotenuse() - largerAxis)
+			return largerAxis + (hypotenuse() - largerAxis);
 		},
 		position: function() {
 			return {
@@ -18,7 +18,7 @@ let rotatingBG = elem => {
 		}
 	}
 
-	let { hypotenuse, dimensions, position } = squareSpecs
+	let { hypotenuse, dimensions, position } = squareSpecs;
 
 	elem.style.cssText = `
 		width: ${dimensions()}px;
@@ -28,4 +28,4 @@ let rotatingBG = elem => {
 	`
 }
 
-export default rotatingBG
+export default rotatingBG;

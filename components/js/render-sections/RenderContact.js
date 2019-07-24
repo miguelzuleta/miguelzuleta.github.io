@@ -1,9 +1,9 @@
-import toDOM from '../helpers/toDOM'
-import sectionWrap from '../site-modules/section-wrap'
+import toDOM from '../helpers/toDOM';
+import sectionWrap from '../site-modules/section-wrap';
 
 let RenderContact = dataObj => {
-	let { title, info } = dataObj
-	let contactList = []
+	let { title, info } = dataObj;
+	let contactList = [];
 
 	for(let key in info) {
 		contactList.push({
@@ -20,9 +20,9 @@ let RenderContact = dataObj => {
 		})
 	}
 
-	let contactData = sectionWrap('contact', title, contactList)
+	let contactData = sectionWrap('contact', title, contactList);
 
-	toDOM(contactData)
+	toDOM(contactData);
 }
 
-export default RenderContact
+export default RenderContact;

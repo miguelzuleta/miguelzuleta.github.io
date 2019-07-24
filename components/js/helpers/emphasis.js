@@ -1,24 +1,24 @@
 const emphasis = text => {
-	let matchEm = text.match(/\*(.*?)\*/g)
+	let matchEm = text.match(/\*(.*?)\*/g);
 
 	if (matchEm) {
-		let breakSentence = text.split('*')
-		let textWithEmphasis = ''
+		let breakSentence = text.split('*');
+		let textWithEmphasis = '';
 
-		matchEm = matchEm.map(str => str.replace(/\*/g, ''))
+		matchEm = matchEm.map(str => str.replace(/\*/g, ''));
 
 		breakSentence.forEach(el => {
 			if (matchEm.includes(el)) {
-				textWithEmphasis += `<em>${el}</em>`
+				textWithEmphasis += `<em>${el}</em>`;
 			} else {
-				textWithEmphasis += el
+				textWithEmphasis += el;
 			}
 		})
 
-		return textWithEmphasis
+		return textWithEmphasis;
 	}
 
-	return text
+	return text;
 }
 
-export default emphasis
+export default emphasis;

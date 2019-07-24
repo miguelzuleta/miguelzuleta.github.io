@@ -1,7 +1,7 @@
-import { BODY, MAIN_WRAP } from '../helpers/constants'
+import { BODY, MAIN_WRAP } from '../helpers/constants';
 
 let RenderOldBrowserMsg = () => {
-	BODY.classList.add('old-browser')
+	BODY.classList.add('old-browser');
 
 	let oldBrowserMsg = `
 		<div class="msg">
@@ -10,7 +10,7 @@ let RenderOldBrowserMsg = () => {
 			<p>Have you tried <a href="https://www.google.com/chrome/">Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>? They're awesome.</p>
 		</div>
 	`
- 	document.querySelector(MAIN_WRAP).innerHTML = oldBrowserMsg
+ 	document.querySelector(MAIN_WRAP).innerHTML = oldBrowserMsg;
 }
 
-export default RenderOldBrowserMsg
+export default RenderOldBrowserMsg;

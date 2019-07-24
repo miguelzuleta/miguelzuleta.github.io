@@ -1,8 +1,8 @@
-import { MAIN_WRAP } from '../helpers/constants.js'
-import toDOM from '../helpers/toDOM'
+import { MAIN_WRAP } from '../helpers/constants.js';
+import toDOM from '../helpers/toDOM';
 
 let RenderHero = dataObj => {
-	let { headline, intro } = dataObj
+	let { headline, intro } = dataObj;
 
 	let heroData = {
 		parent: MAIN_WRAP,
@@ -23,7 +23,7 @@ let RenderHero = dataObj => {
 		}]
 	}
 
-	toDOM(heroData)
+	toDOM(heroData);
 }
 
-export default RenderHero
+export default RenderHero;
