@@ -19,13 +19,7 @@ let MZsite = () => {
 		}
 	}
 
-	let _fetchData = jsonFile => {
-		let data = fetch(jsonFile)
-			.then(response => response.json())
-			.then(content => content)
-
-		return Promise.resolve(data)
-	}
+	let _fetchData = jsonFile => fetch(jsonFile).then(response => response.json())
 
 	let _renderSections = () => {
 		_fetchData('./data.json').then(dataObj => {
