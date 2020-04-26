@@ -5,12 +5,8 @@ let RenderBg = () => {
 	let heroData = {
 		parent: MAIN_WRAP,
 		child: [{
-			elem: 'div',
-			attrs: { class: 'bg-wrap' },
-			child: [{
-				elem: 'div',
-				attrs: { class: 'bg-square' }
-			}]
+			class: 'bg-wrap',
+			child: [{ class: 'bg-square' }]
 		}]
 	}
 

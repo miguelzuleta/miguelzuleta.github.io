@@ -8,10 +8,9 @@ let RenderHero = dataObj => {
 		parent: MAIN_WRAP,
 		child: [{
 			elem: 'header',
-			attrs: { class: 'hero-msg-wrap' },
+			class: 'hero-msg-wrap',
 			child: [{
-				elem: 'div',
-				attrs: { class: 'hero-msg' },
+				class: 'hero-msg',
 				child: [{
 					elem: 'h1',
 					text: headline

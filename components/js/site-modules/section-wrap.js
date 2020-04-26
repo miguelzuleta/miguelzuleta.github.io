@@ -5,17 +5,16 @@ const sectionWrap = (sectionClass, sectionTitle, sectionList) => {
 		parent: MAIN_WRAP,
 		child: [{
 			elem: 'section',
-			attrs: { class: `${sectionClass} info`},
+			class: `${sectionClass} info`,
 			child: [{
-				elem: 'div',
-				attrs: { class: 'info-wrap' },
+				class: 'info-wrap',
 				child: [{
 					elem: 'h4',
-					attrs: { class: 'info-title' },
+					class: 'info-title',
 					text: sectionTitle
 				}, {
 					elem: 'ul',
-					attrs: { class: `${sectionClass}-list` },
+					class: `${sectionClass}-list`,
 					child: sectionList
 				}]
 			}]

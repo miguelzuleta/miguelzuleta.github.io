@@ -8,25 +8,42 @@ let RenderExp = dataObj => {
 	for(let key in dataObj) {
 		let { company, duration, title, description } = dataObj[key];
 
+		let companyInfo = {
+			elem: 'h4',
+			class: 'company'
+		};
+
+		if (company) {
+			if (company.match(/\*\*/)) {
+				let companyDetails = company.split('**');
+
+				companyInfo['text'] = companyDetails[0];
+				companyInfo['child'] = [{
+					elem: 'em',
+					text: companyDetails[1]
+				}];
+			} else {
+				companyInfo['text'] = company;
+			}
+		}
+
 		if (key !== 'title') {
 			expList.push({
 				elem: 'li',
-				attrs: { class: `job ${key}` },
+				class: `job ${key}`,
 				child: [{
 					elem: 'small',
-					attrs: { class: 'duration' },
+					class: 'duration',
 					text: `${duration.from} - ${duration.to}`
-				}, {
-					elem: 'h4',
-					attrs: { class: 'company' },
-					text: company
-				}, {
+				},
+				companyInfo, 
+				{
 					elem: 'h5',
-					attrs: { class: 'title' },
+					class: 'title',
 					text: title
 				}, {
 					elem: 'p',
-					attrs: { class: 'description' },
+					class: 'description',
 					text: description
 				}]
 			})

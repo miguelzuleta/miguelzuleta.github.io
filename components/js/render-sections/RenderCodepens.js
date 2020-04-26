@@ -8,7 +8,7 @@ let RenderSkills = dataObj => {
 	for(let key in pens) {
 		pensList.push({
 			elem: 'li',
-			attrs: { class: 'pen' },
+			class: 'pen',
 			child: [{
 				elem: 'a',
 				attrs: {
