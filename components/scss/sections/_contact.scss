@@ -1,0 +1,45 @@
+.contact {
+	&-list {
+		display: flex;
+		flex-wrap: wrap;
+
+		li {
+			flex-grow: 1;
+
+			&:not(:last-child) {
+				margin-right: $barListSpacing;
+			}
+
+			$counter: 1;
+			@each $contact, $color in $contact-colors {
+
+				&:nth-child(#{$counter}) .bar-list:hover{
+					background-color: #{$color};
+				}
+
+				$counter: $counter + 1;
+			}
+
+			@include vport('small') {
+				width: 100%;
+
+				&:not(:last-child) {
+					margin-right: 0;
+					margin-bottom: $barListSpacing;
+				}
+			}
+		}
+
+		&-item {
+			@include tabLinkIcon($darker, $lightest);
+
+			text-align: center;
+			position: relative;
+			margin-bottom: 0;
+
+			&:hover {
+				color: $lightest;
+			}
+		}
+	}
+}

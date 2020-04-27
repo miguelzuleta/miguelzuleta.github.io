@@ -1,0 +1,110 @@
+.exp {
+	.exp-list {
+		display: flex;
+		flex-wrap: wrap;
+		padding-top: 20px;
+
+		.job {
+			width: calc(25% - #{$expSpacing});
+			position: relative;
+			box-sizing: content-box;
+			border: 1px dotted transparent;
+			border-top-color: $darkest;
+
+			&:not(:last-child) {
+				padding-right: $expSpacing;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				background-color: $darkest;
+				left: 0;
+				width: 10px;
+				height: 10px;
+				top: -6px;
+				border-radius: 1em;
+			}
+
+			em {
+				font-size: 60%;
+				text-transform: uppercase;
+			}
+
+			.duration {
+				font-size: 12px;
+				text-transform: uppercase;
+				position: relative;
+				top: -20px;
+				left: 13px;
+			}
+
+			.company {
+				font-size: 17px;
+				margin-top: 15px;
+				font-weight: 600;
+			}
+
+			.title {
+				font-size: 12px;
+				margin-top: 5px;
+				color: $midtone;
+			}
+
+			.description {
+				font-size: 15px;
+				margin-top: 20px;
+				line-height: 22px;
+			}
+		}
+
+		@include vport('medium') {
+			flex-wrap: wrap-reverse;
+
+			.job {
+				width: 100%;
+
+				&, &:not(:last-child) {
+					padding: 0 0 55px 25px;
+					border-top-color: transparent;
+					border-left-color: $darkest;
+
+					&:before {
+						left: -6px;
+					}
+
+					.duration {
+						top: -10px;
+						left: 0;
+					}
+				}
+
+				&:first-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+
+		@include vport('small') {
+			.job {
+				.duration {
+					font-size: 14px;
+					top: -11px;
+				}
+
+				.company {
+					font-size: 20px;
+				}
+
+				.title {
+					font-size: 14px;
+				}
+
+				.description {
+					font-size: 17px;
+					line-height: 26px;
+				}
+			}
+		}
+	}
+}

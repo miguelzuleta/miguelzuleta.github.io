@@ -1,0 +1,62 @@
+@mixin center() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin vport($viewport) {
+	@media screen and (max-width: #{map-get($viewports, $viewport)}) {
+		@content;
+	}
+}
+
+@mixin outer-padding($top, $right) {
+	padding: $top $right;
+
+	@media only screen
+		and (device-width: 375px)
+		and (device-height: 812px)
+		and (-webkit-device-pixel-ratio: 3)
+		and (orientation: landscape) {
+			padding: $top calc(env(safe-area-inset-right) + 10px);
+		}
+}
+
+@mixin tabLinkIcon($color, $colorHover: null) {
+
+	@if($colorHover) {
+		&:hover {
+			&:before, &:after {
+				border-color: $colorHover;
+			}
+		}
+
+		&, &:before, &:after {
+			transition: all 0.15s ease-in;
+		}
+	}
+
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		border: 1px solid $color;
+	}
+
+	&:before {
+		width: 6px;
+		height: 6px;
+		top: 8px;
+		right: 8px;
+		border-width: 1px 1px 0 0;
+	}
+
+	&:after {
+		width: 10px;
+		height: 10px;
+		top: 11px;
+		right: 4px;
+		border-width: 1px 0 0;
+		transform: rotate(-45deg);
+	}
+}

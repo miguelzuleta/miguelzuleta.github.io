@@ -1,0 +1,102 @@
+body {
+	background-color: $darker;
+
+	* {
+		font-family: 'Work Sans', sans-serif;
+		color: $darker;
+		opacity: 0;
+	}
+
+	&.data-loaded * {
+		opacity: 1;
+	}
+
+	&.ie {
+		.bg {
+			&-square {
+				display: none;
+			}
+
+			&-wrap {
+				background: repeating-linear-gradient(45deg, $ie-color-1, $ie-color-2, $ie-color-3);
+				background-color: $ie-color-2;
+			}
+		}
+	}
+
+	&.old-browser {
+		.hero, .info {
+			display: none;
+		}
+
+		main {
+			margin: 30px;
+			position: relative;
+
+			&, * {
+				opacity: 1;
+				color: $lighter;
+			}
+
+			p {
+				margin-bottom: 15px;
+				font-weight: 300;
+				font-size: 20px;
+			}
+
+			a {
+				color: $ie-color-1;
+			}
+		}
+	}
+}
+
+.info {
+	@include outer-padding(80px, 40px);
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: $lightest;
+	overflow: hidden;
+
+	&:not(:first-child) {
+		margin-top: 5px;
+	}
+
+	&-wrap {
+		width: 100%;
+		max-width: #{$max-large};
+		margin: 0 auto;
+	}
+
+	&-title {
+		font-size: 40px;
+		font-weight: 300;
+		margin-bottom: 50px;
+	}
+
+	@include vport('small') {
+		padding: 60px 25px;
+
+		&-title {
+			font-size: 44px;
+		}
+	}
+}
+
+.bar {
+	&-list {
+		display: block;
+		padding: 14px;
+		position: relative;
+		margin-bottom: $barListSpacing;
+		background-color: $lighter;
+		font-size: 15px;
+		font-weight: 300;
+
+		@include vport('small') {
+			font-size: 17px;
+		}
+	}
+}
+

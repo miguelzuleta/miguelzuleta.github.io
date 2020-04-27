@@ -1,0 +1,32 @@
+// Viewports
+$viewports: (
+	large: '1280px',
+	medium: '980px',
+	small: '640px',
+);
+
+$max-large: map-get($viewports, 'large');
+$max-medium: map-get($viewports, 'medium');
+$max-small: map-get($viewports, 'small');
+
+// Spacing
+$barListSpacing: 8px;
+$expSpacing: 45px;
+
+// Colors
+$darkest: #000;
+$darker: #313131;
+$midtone: #808080;
+$lighter: #eee;
+$lightest: #fff;
+
+$contact-colors: (
+	phone: '#007aff',
+	linkedin: '#0077b5',
+	facebook: '#3b5998'
+);
+
+// IE fallback colors
+$ie-color-1: #ffffa6;
+$ie-color-2: #61ffff;
+$ie-color-3: #65b1ff;
