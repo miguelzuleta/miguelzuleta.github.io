@@ -2,7 +2,6 @@
   "author": "Miguel Zuleta",
   "name": "miguelzuleta.github.io",
   "description": "Miguel Zuleta's Portfolio",
-  "version": "2.4.1",
   "scripts": {
     "build:css": "node-sass --include-path scss components/scss/styles.scss built/styles.css --output-style compressed",
     "watch:css": "npm run build:css -- --watch",
@@ -11,7 +10,7 @@
     "minify:js": "minify ./built/js.js -o ./built/js.js",
     "build": "npm run build:js && npm run build:css",
     "watch": "npm run watch:js & npm run watch:css",
-    "serve": "browser-sync start -s --files 'components' --no-notify --port 1234"
+    "serve": "browser-sync start -s --files 'components' --no-notify --port 1234 & npm run watch"
   },
   "license": "ISC",
   "devDependencies": {

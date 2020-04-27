@@ -9,8 +9,8 @@ let RenderExp = dataObj => {
 		let { company, duration, title, description } = dataObj[key];
 
 		let companyInfo = {
-			elem: 'h4',
-			class: 'company'
+			text: false,
+			child: false
 		};
 
 		if (company) {
@@ -18,10 +18,12 @@ let RenderExp = dataObj => {
 				let companyDetails = company.split('**');
 
 				companyInfo['text'] = companyDetails[0];
-				companyInfo['child'] = [{
-					elem: 'em',
-					text: companyDetails[1]
-				}];
+				companyInfo['child'] = {
+					child: [{
+						elem: 'em',
+						text: companyDetails[1]
+					}]
+				};
 			} else {
 				companyInfo['text'] = company;
 			}
@@ -36,7 +38,12 @@ let RenderExp = dataObj => {
 					class: 'duration',
 					text: `${duration.from} - ${duration.to}`
 				},
-				companyInfo, 
+				{
+					elem: 'h4',
+					class: 'company',
+					text: companyInfo.text,
+					...companyInfo.child
+				}, 
 				{
 					elem: 'h5',
 					class: 'title',
