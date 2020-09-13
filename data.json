@@ -1,7 +1,7 @@
 {
 	"hero": {
 		"headline": "Miguel Zuleta",
-		"intro": "Senior UI Developer"
+		"intro": "Front-end Developer"
 	},
 	"skills": {
 		"title": "Skills",
@@ -53,8 +53,8 @@
 				"from": "07/16",
 				"to": "Today"
 			},
-			"title": "Senior UI Developer",
-			"description": "Developing and maintaining several marketing websites for WWDC and product launch events. Implemented internal web tools that accelerate the production process between dev and design teams. Initiated the development of a site map generator for the design team that substantially reduces work time from weeks to a couple of minutes."
+			"title": "Front-end Developer",
+			"description": "Developing and maintaining several marketing websites for WWDC and product launch events. Implementing internal web tools that accelerate the production process between dev and design teams. Building documentation sites that further facilitate on&#8209;boarding experience for new developers into new internal libraries."
 		}
 	},
 	"codepens": {
@@ -69,9 +69,8 @@
 	"contact": {
 		"title": "Contact",
 		"info": {
-			"419-503-2439": "sms:419-503-2439",
 			"LinkedIn": "https://www.linkedin.com/in/miguel-zuleta-68b1134a/",
-			"Facebook": "https://www.messenger.com/t/miguel.zuleta.86"
+			"FB Messenger": "https://www.messenger.com/t/miguel.zuleta.86"
 		}
 	}
 }

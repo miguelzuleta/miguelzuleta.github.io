@@ -111,6 +111,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+var _constants = require("./constants");
+
 var rotatingBG = function rotatingBG(elem) {
   var windowH = window.innerHeight;
   var windowW = window.innerWidth;
@@ -133,12 +135,19 @@ var rotatingBG = function rotatingBG(elem) {
       dimensions = squareSpecs.dimensions,
       position = squareSpecs.position;
   elem.style.cssText = "\n\t\twidth: ".concat(dimensions(), "px;\n\t\theight: ").concat(dimensions(), "px;\n\t\ttop: ").concat(position().top, "px;\n\t\tleft: ").concat(position().left, "px;\n\t");
+  var foregroundClass = 'site-not-on-foreground';
+  window.addEventListener('blur', function () {
+    _constants.BODY.classList.add(foregroundClass);
+  });
+  window.addEventListener('focus', function () {
+    _constants.BODY.classList.remove(foregroundClass);
+  });
 };
 
 var _default = rotatingBG;
 exports["default"] = _default;
 
-},{}],4:[function(require,module,exports){
+},{"./constants":2}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -150,7 +159,7 @@ function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableTo
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
 

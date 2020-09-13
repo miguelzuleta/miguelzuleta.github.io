@@ -1,3 +1,5 @@
+import { BODY } from './constants';
+
 let rotatingBG = elem => {
 	let windowH = window.innerHeight;
 	let windowW = window.innerWidth;
@@ -26,6 +28,17 @@ let rotatingBG = elem => {
 		top: ${position().top}px;
 		left: ${position().left}px;
 	`
+
+	let foregroundClass = 'site-not-on-foreground';
+
+	window.addEventListener('blur', () => {
+		BODY.classList.add(foregroundClass);
+	})
+
+	window.addEventListener('focus', () => {
+		BODY.classList.remove(foregroundClass);
+	})
+
 }
 
 export default rotatingBG;

@@ -84,19 +84,18 @@ body {
 	}
 }
 
-.bar {
-	&-list {
-		display: block;
-		padding: 14px;
-		position: relative;
-		margin-bottom: $barListSpacing;
-		background-color: $lighter;
-		font-size: 15px;
-		font-weight: 300;
+.bar-list {
+	display: block;
+	padding: 14px;
+	position: relative;
+	margin-bottom: $barListSpacing;
+	background-color: $lighter;
+	font-size: 15px;
+	font-weight: 300;
+	text-decoration: none;
 
-		@include vport('small') {
-			font-size: 17px;
-		}
+	@include vport('small') {
+		font-size: 17px;
 	}
 }
 

@@ -13,6 +13,10 @@
 		mix-blend-mode: color-dodge;
 		animation: test 10s linear 0s infinite;
 
+		@at-root .site-not-on-foreground & {
+			animation-play-state: paused;
+		}
+
 		@at-root {
 			@keyframes test {
 				from {
